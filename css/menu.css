@@ -1,35 +1,37 @@
-.bg-blue{
-    background-color:rgb(28, 45, 146);
-}
-.nav-cont{width:200px;
-height:100vh;
+.bg-blue {
+    background-color: rgb(28, 45, 146);
 }
 
-.active-font{
-    color:white;
-}
-.inactive-font{
-    color:lightgrey !important;
+.nav-cont {
+    width: 200px;
+    height: 100vh;
 }
 
-.menu-column{
+.active-font {
+    color: white;
+}
+
+.inactive-font {
+    color: lightgrey !important;
+}
+
+.menu-column {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.menu-row{
-    display:flex;
+.menu-row {
+    display: flex;
     gap: 4px;
 }
 
-.active-s{
-min-height:20px;
-min-width:6px;
-background-color: white;
+.active-s {
+    min-height: 20px;
+    min-width: 6px;
+    background-color: white;
 }
 
-.inactive-s{
-
+.inactive-s {
     background-color: lightgrey !important;
-    }
+}
