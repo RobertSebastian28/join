@@ -1,1 +1,28 @@
+.add-task-head {
+    margin-top: 16px;
+}
 
+.add-task-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60vw;
+}
+
+.add-task-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 88.5vw;
+}
+
+input {
+    height: 100px;
+    width: 300px;
+}
+
+.add-task-assigned-to {
+    width: 300px;
+}
