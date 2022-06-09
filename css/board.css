@@ -1,0 +1,49 @@
+.headline-main {
+    margin-top: 16px;
+}
+
+.kanban-board {
+    display: flex;
+    justify-content: space-around;
+    width: 1600px;
+    height: 100%;
+}
+
+.board-element {
+    position: relative;
+    margin-top: 16px;
+    width: 280px;
+    height: 700px;
+}
+
+.element-headline {
+    margin-top: 8px;
+}
+
+.backlog-button {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.ticket-buttons{
+display:flex;
+justify-content: space-between;
+}
+
+.headline-name {
+    text-align: center;
+}
+
+.sub-card {
+    margin-bottom: 4px;
+}
+
+
+.form-resize-off {
+    resize: none;
+}
+
+.drag-over {
+    background-color: rgba(0, 0, 0, 0.2);
+}
