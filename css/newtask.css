@@ -1,5 +1,10 @@
 .add-task-head {
     margin-top: 16px;
+    margin-left: 25px;
+}
+
+.add-task-subtitle {
+    color: rgb(8, 137, 180);
 }
 
 .add-task-content {
@@ -7,7 +12,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    width: 60vw;
+    max-width: 60vw;
 }
 
 .add-task-center {
@@ -19,10 +24,57 @@
 }
 
 input {
+    text-align: start;
     height: 100px;
-    width: 300px;
+    width: 500px;
+    font-size: 20px;
+}
+
+select {
+    height: 100px;
+    width: 500px;
+    font-size: 25px;
 }
 
 .add-task-assigned-to {
-    width: 300px;
+    width: 500px;
+    height: 250px;
+}
+
+.add-task-margin-bottom {
+    margin-bottom: 60px;
+}
+
+.add-task-margin-right {
+    margin-right: 30px;
+}
+
+.add-task-margin-top {
+    margin-top: 20px;
+}
+
+.add-task-margin-top- {
+    margin-top: -40px;
+}
+
+.add-task-description-input {
+    height: 250px;
+}
+
+.profile-pic {
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+}
+
+#icon-plus {
+    padding-left: 30px;
+}
+
+.add-task-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 60px;
 }
