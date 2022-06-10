@@ -2,12 +2,15 @@
     background-color: rgb(28, 45, 146);
 }
 
-.nav-cont {
-    width: 200px;
+.nav-cont {display:flex;
+    flex-direction: column;
+    width: 128px;
     height: 100vh;
 }
 
 .active-font {
+    margin-left:26px;
+    font-size: 18px;
     color: white;
 }
 
@@ -15,10 +18,18 @@
     color: lightgrey !important;
 }
 
-.menu-column {
+.nav-logo{
+height:71px;
+width:60px;
+margin-left:34px;
+margin-top:24px;
+}
+
+.menu-column { margin-top:84px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap:18px;
 }
 
 .menu-row {
@@ -27,11 +38,21 @@
 }
 
 .active-s {
-    min-height: 20px;
+    min-height: 28px;
     min-width: 6px;
     background-color: white;
 }
 
 .inactive-s {
     background-color: lightgrey !important;
+}
+
+.user-logo{
+    margin-top: 256px;
+    margin-left:34px;
+    border-radius: 100%;
+    border-style: solid;
+    border-width:1px;
+    height:48px;
+    width:48px;
 }
