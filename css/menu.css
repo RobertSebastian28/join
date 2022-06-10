@@ -13,10 +13,12 @@
 .active-font {
     margin-left: 26px;
     font-size: 18px;
-    color: white;
+    color: white !important;
 }
 
 .inactive-font {
+    margin-left: 26px;
+    font-size: 18px;
     color: lightgrey !important;
 }
 
@@ -43,10 +45,12 @@
 .active-s {
     min-height: 28px;
     min-width: 6px;
-    background-color: white;
+    background-color: white !important;
 }
 
 .inactive-s {
+    min-height: 28px;
+    min-width: 6px;
     background-color: rgb(200, 200, 200) !important;
 }
 
