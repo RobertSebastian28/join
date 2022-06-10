@@ -87,13 +87,13 @@ function changeColorOfNavItem(page) {
     document.getElementById(currentPage).classList.add('active-font');
     document.getElementById(currentPage + 0).classList.add('active-s');
     elementList.splice(currentId, 1);
-    forLoopForChangeColorOfNavItem();
+    forLoopForChangeColorOfNavItem(elementList);
 }
 
 /**
  * loops through unclicked items.
  */
- function forLoopForChangeColorOfNavItem(){
+ function forLoopForChangeColorOfNavItem(elementList){
     for (let i = 0; i < elementList.length; i++) {
         let element = elementList[i];
         document.getElementById(element).classList.add('inactive-font');
