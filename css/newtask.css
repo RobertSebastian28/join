@@ -4,40 +4,41 @@
 }
 
 .add-task-subtitle {
-    color: rgb(8, 137, 180);
+    color: #0D6EFD;
 }
 
 .add-task-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 60vw;
+    width: 60vw;
 }
 
 .add-task-center {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     margin-top: 50px;
-    width: 88.5vw;
+    margin-left: 25%;
 }
 
-input {
-    text-align: start;
+textarea {
+    display: flex;
     height: 100px;
-    width: 500px;
+    min-width: 450px;
     font-size: 20px;
 }
 
 select {
     height: 100px;
-    width: 500px;
+    min-width: 450px;
     font-size: 25px;
 }
 
 .add-task-assigned-to {
-    width: 500px;
+    min-width: 450px;
     height: 250px;
 }
 
@@ -77,4 +78,9 @@ select {
     align-items: center;
     justify-content: right;
     margin-top: 60px;
+}
+
+.btn {
+    height: 50px;
+    width: 160px;
 }
