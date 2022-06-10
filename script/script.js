@@ -1,7 +1,7 @@
 
 async function init(page){
 await includeHTML();
-changeActivity(page);
+changeColorOfNavItem(page);
 }
 
 async function includeHTML() {
@@ -18,47 +18,20 @@ async function includeHTML() {
     }
 }
 
-// auf alle Fälle noch mit einer Schleife machen
-function changeActivity(page){
-    console.log(page);
-if(page=='board'){
-    document.getElementById('board0').classList.remove('inactive-s');
-    document.getElementById('backlog0').classList.add('inactive-s');
-    document.getElementById('newtask0').classList.add('inactive-s');
-    document.getElementById('help0').classList.add('inactive-s');
-    document.getElementById('board').classList.remove('inactive-font');
-    document.getElementById('backlog').classList.add('inactive-font');
-    document.getElementById('newtask').classList.add('inactive-font');
-    document.getElementById('help').classList.add('inactive-font');
-}
-else if(page=='backlog'){
-    document.getElementById('board0').classList.add('inactive-s');
-    document.getElementById('backlog0').classList.remove('inactive-s');
-    document.getElementById('newtask0').classList.add('inactive-s');
-    document.getElementById('help0').classList.add('inactive-s');
-    document.getElementById('board').classList.add('inactive-font');
-    document.getElementById('backlog').classList.remove('inactive-font');
-    document.getElementById('newtask').classList.add('inactive-font');
-    document.getElementById('help').classList.add('inactive-font');
-}
-else if(page=='newtask'){
-    document.getElementById('board0').classList.add('inactive-s');
-    document.getElementById('backlog0').classList.add('inactive-s');
-    document.getElementById('newtask0').classList.remove('inactive-s');
-    document.getElementById('help0').classList.add('inactive-s');
-    document.getElementById('board').classList.add('inactive-font');
-    document.getElementById('backlog').classList.add('inactive-font');
-    document.getElementById('newtask').classList.remove('inactive-font');
-    document.getElementById('help').classList.add('inactive-font');
-}
-else if(page=='help'){
-    document.getElementById('board0').classList.add('inactive-s');
-    document.getElementById('backlog0').classList.add('inactive-s');
-    document.getElementById('newtask0').classList.add('inactive-s');
-    document.getElementById('help0').classList.remove('inactive-s');
-    document.getElementById('board').classList.add('inactive-font');
-    document.getElementById('backlog').classList.add('inactive-font');
-    document.getElementById('newtask').classList.add('inactive-font');
-    document.getElementById('help').classList.remove('inactive-font');
+/**
+ * changes colors of current page at menu.
+ * 
+ * @param {*} page tells on which page the user is.
+ */
+function changeColorOfNavItem(page){
+let elementList = ['board', 'backlog', 'newtask', 'help'];
+ let currentId = elementList.indexOf(page);
+ document.getElementById(page).classList.remove('inactive-font');
+ document.getElementById(page + 0).classList.remove('inactive-s');
+elementList.splice(currentId,1);
+for (let i = 0; i < elementList.length; i++) {
+    let element = elementList[i];
+    document.getElementById(element).classList.add('inactive-font');
+    document.getElementById(element+0).classList.add('inactive-s');
 }
 }
