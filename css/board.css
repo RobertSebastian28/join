@@ -1,49 +1,94 @@
-.headline-main {
-    margin-top: 16px;
-}
-
 .kanban-board {
     display: flex;
     justify-content: space-around;
-    width: 1600px;
-    height: 100%;
+
+    width: 100%;
+    margin-top: 28px;
 }
 
 .board-element {
-    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
     margin-top: 16px;
-    width: 280px;
-    height: 700px;
+    min-width: 288px;
+    width: fit-content;
+    min-height:600px;
+    border: none;
 }
 
 .element-headline {
     margin-top: 8px;
 }
 
-.backlog-button {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-}
-
-.ticket-buttons{
-display:flex;
-justify-content: space-between;
-}
 
 .headline-name {
     text-align: center;
+    text-transform: uppercase;
 }
 
 .sub-card {
-    margin-bottom: 4px;
-}
-
-
-.form-resize-off {
-    resize: none;
+    margin-bottom: 8px;
+    width: 256px;
+    border-radius: 2px;
 }
 
 .drag-over {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.element-content {
+    background-color: #F4F3FB;
+}
+
+
+
+@media(max-width: 1380px) {
+
+    .board-element {
+        min-width: 232px;
+    }
+
+    .sub-card {
+        width: 200px;
+    }
+}
+
+@media(max-width: 1150px) {
+
+    .kanban-board {
+        flex-direction: column;
+    }
+
+    .board-element {
+        padding-left: 8px;
+        padding-right:8px;
+        margin: 0px;
+        width: 100%;
+        min-width: 232px;
+        min-height: fit-content;
+    }
+
+    .sub-card {
+        margin:4px;
+        width: 200px;
+    }
+
+    .headline-name {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .element-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* spätestens bei 400 Umbruch der ganzen Seite:
+Menu oben und die Navigation versteckt.
+
+small card muss noch angepasst werden.
+*/

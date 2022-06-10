@@ -6,8 +6,22 @@ main {
     display: flex;
 }
 
-.no-deco{
+.no-deco {
     text-decoration: none;
 }
 
+.right-container {
+    margin-left:128px;
+    height: 100vh;
+    width: 100%;
+    max-width: 1500px;
+}
 
+.left-container{
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color: rgb(28, 45, 146);
+    width:128px;
+    height:100vh;
+}

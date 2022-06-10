@@ -25,24 +25,7 @@
 
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
-            <div class="headline-main">
-                <h1>join</h1>
-            </div>
             <div class="kanban-board">
-                <!-- at backlog is class = d-none  -->
-                <div class="card board-element d-none" ondrop="drop('backlog'); endarkenOff('backlogDiv') "
-                    id="backlogDiv" ondragleave="endarkenOff('backlogDiv')"
-                    ondragover="allowDrop(event); endarken('backlogDiv')">
-                    <div class="element-headline">
-                        <h3 class="card-title headline-name">backlog</h3>
-                        <button type="button" class="btn btn-primary backlog-button" data-bs-toggle="modal"
-                            data-bs-target="#changeContent" onclick="pushHtmlForModal()">
-                            +
-                        </button>
-                    </div>
-                    <div class="card-body element-content" id="backlog"></div>
-                </div>
-
                 <div class="card board-element" ondrop="drop('todo'); endarkenOff('todoDiv')" id="todoDiv"
                     ondragleave="endarkenOff('todoDiv')" ondragover="allowDrop(event); endarken('todoDiv')">
                     <div class="element-headline">
@@ -50,7 +33,6 @@
                     </div>
                     <div class="card-body element-content" id="todo"></div>
                 </div>
-
                 <div class="card board-element" ondrop="drop('progress'); endarkenOff('progressDiv')" id="progressDiv"
                     ondragleave="endarkenOff('progressDiv')" ondragover="allowDrop(event); endarken('progressDiv')">
                     <div class="element-headline">
@@ -58,7 +40,6 @@
                     </div>
                     <div class="card-body element-content" id="progress"></div>
                 </div>
-
                 <div class="card board-element" ondrop="drop('testing'); endarkenOff('testingDiv')" id="testingDiv"
                     ondragleave="endarkenOff('testingDiv')" ondragover="allowDrop(event); endarken('testingDiv')">
                     <div class="element-headline">
@@ -66,7 +47,6 @@
                     </div>
                     <div class="card-body element-content" id="testing"></div>
                 </div>
-
                 <div class="card board-element" ondrop="drop('done'); endarkenOff('doneDiv')" id="doneDiv"
                     ondragleave="endarkenOff('doneDiv')" ondragover="allowDrop(event);endarken('doneDiv')">
                     <div class=" element-headline">

@@ -1,32 +1,5 @@
-let data = [
-    {
-        "title": "test1",
-        "content": "blablabla1",
-        "category": "backlog"
-    },
-    {
-        "title": "test2",
-        "content": "blablabla2",
-        "category": "todo"
-    },
-    {
-        "title": "test3",
-        "content": "blablabla3",
-        "category": "progress"
-    },
-    {
-        "title": "test4",
-        "content": "blablabla4",
-        "category": "testing"
-    },
-    {
-        "title": "test5",
-        "content": "blablabla5",
-        "category": "done"
-    }
 
-];
-let categories = ['backlog', 'todo', 'progress', 'testing', 'done'];
+let boards = ['todo', 'progress', 'testing', 'done'];
 let currentDrag;
 
 
@@ -34,15 +7,14 @@ let currentDrag;
 /**
  * Reads the JSON-array: data and renders the elements in the according div.
  */
- function updateHTML() {
-    console.log(data);
-    for (let i = 0; i < categories.length; i++) {
-        let category = categories[i];
-        let column = data.filter(cat => cat['category'] == category);
-        document.getElementById(category).innerHTML = '';
+function updateHTML() {
+    for (let i = 0; i < boards.length; i++) {
+        let board = boards[i];
+        let column = data.filter(cat => cat['board'] == board);
+        document.getElementById(board).innerHTML = '';
         for (let j = 0; j < column.length; j++) {
             const element = column[j];
-            document.getElementById(category).innerHTML += generateHtml(element);
+            document.getElementById(board).innerHTML += generateHtml(element);
         }
     }
 }
@@ -59,9 +31,15 @@ function generateHtml(element) {
     <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})">
         <div class="card-body">
             <h5 class="card-title"> ${element['title']}</h5>
-            <p class="card-text"> ${element['content']}</p>
+            <p class="card-text">desription: ${element['description']}</p>
+            <p class="card-text">urgency: ${element['urgency']}</p>
+            <p class="card-text">due to:${element['dueDate']}</p>
+            <p class="card-text">assignedto: ${element['assignedTo']}</p>
+
+
+
+
             <div class="ticket-buttons">
-            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeContent" onclick="pushHtmlForModal(${id})">edit</a>
             <a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a></div>
         </div>
     </div>`;
@@ -86,33 +64,16 @@ function allowDrop(ev) {
 }
 
 /**
- * Changes The content of the "category"-key.
+ * Changes The content of the "board"-key.
  * refreshes the kanban-board.
  * 
- * @param {*} category is the id of the div in which the element is dropped.
+ * @param {*} board is the id of the div in which the element is dropped.
  */
-function drop(category) {
-    data[currentDrag]['category'] = category;
+function drop(board) {
+    data[currentDrag]['board'] = board;
     updateHTML();
 }
 
-/**
- * saves content to array and refreshes page
- * 
- * @param {*} title id of textfield
- * @param {*} content id of textarea
- */
-function newContent(title, content) {
-    let newContent = {
-        "title": title.value,
-        "content": content.value,
-        "category": "backlog",
-    }
-    data.push(newContent);
-    document.getElementById('changeTitle').value = ``;
-    document.getElementById('changeInnerContent').value = ``;
-    updateHTML();
-}
 
 /**
  * deletes ticket from page and array
@@ -124,39 +85,6 @@ function deleteTicket(id) {
     updateHTML();
 }
 
-/**
- * changes HTML elements of the modal
- * 
- * @param {*} id tells which ticket
- */
-function pushHtmlForModal(id) {
-    document.getElementById('changeButton').setAttribute('onclick', `saveTicket(${id})`);
-    if (id !== undefined) {
-        document.getElementById('changeTitle').value = `${data[id]['title']}`;
-        document.getElementById('changeInnerContent').value = `${data[id]['content']}`;
-    }
-}
-
-/**
- * saves ticket to array and refreshes site
- * 
- * @param {*} id tells which tickelt
- */
-function saveTicket(id) {
-    let title = document.getElementById('changeTitle');
-    let content = document.getElementById('changeInnerContent');
-
-    if (id == undefined) {
-        newContent(title, content);
-    }
-    else {
-        data[id]['title'] = title.value;
-        data[id]['content'] = content.value;
-        document.getElementById('changeTitle').value = ``;
-        document.getElementById('changeInnerContent').value = ``;
-        updateHTML();
-    }
-}
 
 /**
  * endarkens the card while ticket is dragged over

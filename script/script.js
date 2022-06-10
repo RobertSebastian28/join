@@ -1,7 +1,62 @@
 
-async function init(page){
-await includeHTML();
-changeColorOfNavItem(page);
+//testing Data:
+
+let data = [
+    {
+        "title": "test1",
+        "description": "blablabla1",
+        "board": "backlog",
+        "dueDate": 0,
+        "category": "Marketing",
+        "urgency":"high",
+        "assignedTo": "no one"
+    },
+    {
+        "title": "test2",
+        "description": "blablabla2 dsjhf asdkhgflkasdj hflksjdhflk asdhkflhlkj dlkfhak dhflkhasdlk fhlksjdhflk asdhfksd hfkaskghd gkhadlkgh aphdip ",
+        "board": "todo",
+        "dueDate": 0,
+        "category": "Marketing",
+        "urgency":"high",
+        "assignedTo": "no one"
+    },
+    {
+        "title": "test3",
+        "description": "blablabla3",
+        "board": "progress",
+        "dueDate": 0,
+        "category": "Marketing",
+        "urgency":"high",
+        "assignedTo": "no one"
+    },
+    {
+        "title": "test4",
+        "description": "blablabla4",
+        "board": "testing",
+        "dueDate": 0,
+        "category": "Marketing",
+        "urgency":"high",
+        "assignedTo": "no one"
+    },
+    {
+        "title": "test5",
+        "description": "blablabla5",
+        "board": "done",
+        "dueDate": 0,
+        "category": "Marketing",
+        "urgency":"high",
+        "assignedTo": "no one"
+    }
+];
+
+
+
+
+
+
+async function init(page) {
+    await includeHTML();
+    changeColorOfNavItem(page);
 }
 
 async function includeHTML() {
@@ -23,15 +78,16 @@ async function includeHTML() {
  * 
  * @param {*} page tells on which page the user is.
  */
-function changeColorOfNavItem(page){
-let elementList = ['board', 'backlog', 'newtask', 'help'];
- let currentId = elementList.indexOf(page);
- document.getElementById(page).classList.remove('inactive-font');
- document.getElementById(page + 0).classList.remove('inactive-s');
-elementList.splice(currentId,1);
-for (let i = 0; i < elementList.length; i++) {
-    let element = elementList[i];
-    document.getElementById(element).classList.add('inactive-font');
-    document.getElementById(element+0).classList.add('inactive-s');
-}
+function changeColorOfNavItem(page) {
+    let currentPage = 'menu' + page[0].toUpperCase() + page.substring(1);
+    let elementList = ['menuBoard', 'menuBacklog', 'menuNewTask', 'menuHelp'];
+    let currentId = elementList.indexOf(currentPage);
+    document.getElementById(currentPage).classList.remove('inactive-font');
+    document.getElementById(currentPage + 0).classList.remove('inactive-s');
+    elementList.splice(currentId, 1);
+    for (let i = 0; i < elementList.length; i++) {
+        let element = elementList[i];
+        document.getElementById(element).classList.add('inactive-font');
+        document.getElementById(element + 0).classList.add('inactive-s');
+    }
 }
