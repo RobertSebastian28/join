@@ -11,17 +11,41 @@ main {
 }
 
 .right-container {
-    margin-left:128px;
+    margin-left: 128px;
     height: 100vh;
     width: 100%;
     max-width: 1500px;
 }
 
-.left-container{
-    position:fixed;
-    top:0px;
-    left:0px;
+.left-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: rgb(28, 45, 146);
-    width:128px;
-    height:100vh;
+    width: 128px;
+    height: 100vh;
+}
+
+@media(max-width:400px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .right-container {
+        margin-left: 0px;
+        margin-top:0px;
+        height: 100%;
+    }
+
+    .left-container {
+        position: static;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        width:100%;
+        z-index:1;
+    }
+
 }

@@ -1,23 +1,19 @@
-.nav-sticky {
-    position: sticky;
-    bottom:0;
-}
-
 .nav-cont {
     display: flex;
     flex-direction: column;
     width: 128px;
     height: 100%;
+    position: relative;
 }
 
 .active-font {
-    margin-left: 26px;
+    margin-left: 28px;
     font-size: 18px;
     color: white !important;
 }
 
 .inactive-font {
-    margin-left: 26px;
+    margin-left: 28px;
     font-size: 18px;
     color: lightgrey !important;
 }
@@ -35,11 +31,18 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+    list-style: none;
+}
+
+.menu-column a {
+    width: 100%;
+    height: 100%;
 }
 
 .menu-row {
     display: flex;
-    gap: 4px;
 }
 
 .active-s {
@@ -51,7 +54,7 @@
 .inactive-s {
     min-height: 28px;
     min-width: 6px;
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .user-logo {
@@ -62,4 +65,134 @@
     border-width: 1px;
     height: 48px;
     width: 48px;
+}
+
+.menu-row {
+    height: 100%;
+    width: 100%;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.toggle_button {
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 23px;
+    position: absolute;
+    top: calc((80px - 23px) / 2);
+    right: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:400px) {
+.menu-column{display:none;}
+    .toggle_button {
+        display: flex;
+    }
+
+    nav ul {
+        height: min-content;
+        width: 100%;
+        background: rgb(28, 45, 146);
+        display: none;
+        position: absolute;
+        top: 0px;
+    }
+
+    nav li {
+        height: min-content;
+        width: 100%
+    }
+
+   
+
+    #toggle_button:checked~ul {
+
+        display: block;
+    }
+
+    .nav-cont {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .active-font {
+        margin-left: 26px;
+        font-size: 18px;
+        color: white !important;
+    }
+
+    .inactive-font {
+        margin-left: 26px;
+        font-size: 18px;
+        color: lightgrey !important;
+    }
+
+    .nav-logo {
+
+        margin: 0 0 0 8px;
+    }
+
+
+    .menu-row {
+        display: flex;
+        gap: 4px;
+        padding-top: 8px;
+    }
+
+    .active-s {
+        min-height: 28px;
+        min-width: 6px;
+        background-color: white !important;
+    }
+
+    .inactive-s {
+        min-height: 28px;
+        min-width: 6px;
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .user-logo {
+        display: none;
+    }
 }
