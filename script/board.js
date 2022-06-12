@@ -35,12 +35,9 @@ function generateHtml(element) {
             <p class="card-text">urgency: ${element['urgency']}</p>
             <p class="card-text">due to:${element['dueDate']}</p>
             <p class="card-text">assignedto: ${element['assignedTo']}</p>
-
-
-
-
             <div class="ticket-buttons">
-            <a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a></div>
+            <a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a>
+            <a href="#" class="btn btn-primary mobile-button"  onclick="sendToNext(${id})">next</a></div>
         </div>
     </div>`;
 }
@@ -102,4 +99,15 @@ function endarken(id) {
  */
 function endarkenOff(id) {
     document.getElementById(id).classList.remove('drag-over');
+}
+
+
+function sendToNext(id) {
+    startDrag(id);
+    let boardId = boards.indexOf(data[id]['board']);
+    boardId++;
+    nextBoard = boards[boardId];
+    if (boardId < 4) {
+        drop(nextBoard);
+    }
 }

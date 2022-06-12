@@ -123,7 +123,11 @@ nav input[type="checkbox"] {
 
 
 @media(max-width:400px) {
-.menu-column{display:none;}
+
+    .menu-column {
+        display: none;
+    }
+
     .toggle_button {
         display: flex;
     }
@@ -141,8 +145,6 @@ nav input[type="checkbox"] {
         height: min-content;
         width: 100%
     }
-
-   
 
     #toggle_button:checked~ul {
 
