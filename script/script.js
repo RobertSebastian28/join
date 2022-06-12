@@ -67,8 +67,6 @@ function loadFromBackend() {
     }
 }
 
-
-
 /**
  * 
  * @param {*} page tells the page the user is watching.
