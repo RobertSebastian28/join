@@ -12,23 +12,27 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 60vw;
+    max-width: 70vw;
 }
 
 .add-task-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     margin-top: 50px;
-    margin-left: 25%;
 }
 
 textarea {
     display: flex;
     height: 100px;
     min-width: 450px;
-    font-size: 20px;
+    font-size: 25px;
+}
+
+#add-task-dueDate {
+    height: 100px;
+    min-width: 450px;
+    font-size: 25px;
 }
 
 select {

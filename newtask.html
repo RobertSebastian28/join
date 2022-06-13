@@ -22,24 +22,24 @@
 <body onload="init('newTask')">
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
-        <div>
+        <div class="right-container">
             <div class="add-task-head">
                 <h1>Add Task</h1>
                 <span class="add-task-subtitle">Learning Managment System Project</span>
             </div>
-            <div class="add-task-center container-fluid">
-                <div class="add-task-content container-fluid">
+            <form onsubmit="addToAllTasks()" class="add-task-center">
+                <div class="add-task-content">
                     <div class="add-task-margin-bottom">
                         <h3>Title</h3>
-                        <form><textarea required id="" cols="30" rows="10"></textarea></form>
+                        <textarea required minlength="3" id="add-task-title" cols="30" rows="10"></textarea>
                     </div>
                     <div class="add-task-margin-bottom">
                         <h3>Due Date</h3>
-                        <form><textarea required id="" cols="30" rows="10"></textarea></form>
+                        <input required id="add-task-dueDate" type="date">
                     </div>
                     <div class="add-task-margin-bottom">
                         <h3>Category</h3>
-                        <select>
+                        <select id="add-task-category">
                             <option>Marketing</option>
                             <option>Development</option>
                             <option>Design</option>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="add-task-margin-bottom">
                         <h3>Urgency</h3>
-                        <select>
+                        <select id="add-task-urgency">
                             <option>High</option>
                             <option>Medium</option>
                             <option>Low</option>
@@ -55,7 +55,7 @@
                     </div>
                     <div>
                         <h3>Description</h3>
-                        <form><textarea class="add-task-description-input" required id="" cols="30" rows="10"></textarea></form>
+                        <textarea required minlength="3" id="add-task-description" class="add-task-description-input" cols="30" rows="10"></textarea>
                     </div>
                     <div class="add-task-assigned-to add-task-margin-top-">
                         <h3>Assigned To</h3>
@@ -64,12 +64,12 @@
                             <img id="icon-plus" src="./img/icon plus.png">
                         </div>
                         <div class="add-task-buttons">
-                            <button class="add-task-margin-right btn btn-outline-secondary">Cancel</button>
+                            <button onclick="deleteInputValue()" class="add-task-margin-right btn btn-outline-secondary">Cancel</button>
                             <button class="btn btn-outline-primary">Create Task</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 </body>
