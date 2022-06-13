@@ -16,7 +16,7 @@
     <title>Backlog</title>
 </head>
 
-<body onload="init('backlog')" onresize="responsiveHead()">
+<body onload="init('backlog'), renderBacklog()" onresize="responsiveHead()">
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
@@ -37,38 +37,8 @@
                         <div><b>DETAILS</b></div>
                     </div>
                 </div>
-                <!--table rows-->
+                <!--render data to backlog---------------------------->
                 <div id="backlogBox">
-
-                    <div class="d-flex justify-content-start rowStyle">
-                        <div class="d-flex align-items-center firstGap">
-                            <!--add the profile picture here-->
-                            <img src="img/user_dummy.png" class="profilePicture" id="profilePicture" alt="">
-                            <div id="assignedToInfo">Beispiel1</div>
-                        </div>
-                        <div id="testId" class="d-flex secondGap">
-                            <div id="categoryInfo">Beispiel1</div>
-                            <div id="detailsInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo perferendis pariatur architecto. Saepe at voluptatem dolorum harum expedita. Dignissimos aperiam dolorem consequuntur est. Doloremque exercitationem adipisci
-                                et officia sequi.</div>
-                        </div>
-
-                    </div>
-
-                    <div class="d-flex justify-content-start rowStyle">
-                        <div class="d-flex align-items-center firstGap">
-                            <!--add the profile picture here-->
-                            <img src="img/user_dummy.png" class="profilePicture" id="profilePicture" alt="">
-                            <div id="assignedToInfo">Beispiel2</div>
-                        </div>
-                        <div id="testId" class="d-flex secondGap">
-                            <div id="categoryInfo">Beispiel2</div>
-                            <div id="detailsInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo perferendis pariatur architecto. Saepe at voluptatem dolorum harum expedita. Dignissimos aperiam dolorem consequuntur est. Doloremque exercitationem adipisci
-                                et officia sequi.</div>
-                        </div>
-
-                    </div>
-
-
 
 
 
