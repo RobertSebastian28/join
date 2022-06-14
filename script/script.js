@@ -1,8 +1,6 @@
-
 //testing Data:
 
-let data = [
-    {
+let data = [{
         "title": "test1",
         "description": "blablabla1",
         "board": "backlog",
