@@ -27,11 +27,11 @@ function renderBacklog() {
             et officia sequi.</div>
         </div>
     </div>
-        <div id="addToBoard" class="d-none">
-            <div>To Do</div>
-            <div>In Progress</div>
-            <div>Testing</div>
-            <div>Done</div>
+        <div id="addToBoard" class="d-none addToBoardContainer">
+            <div class="section">To Do</div>
+            <div class="section">In Progress</div>
+            <div class="section">Testing</div>
+            <div class="section">Done</div>
         <div>
     `
 }
@@ -40,38 +40,34 @@ function showTask() {
     let hiddenContainer = document.getElementById('addToBoard');
 
     if (hiddenContainer.classList = 'd-none') {
-        document.getElementById('detailsInfo').style.overflow = 'unset';
-        document.getElementById('backlogRow').style.lineHeight = 'unset';
-        document.getElementById('backlogRow').style.maxHeight = 'unset';
-        document.getElementById('secondGap').style.alignItems = 'center';
-        hiddenContainer.classList.remove('d-none');
-        hiddenContainer.classList.add('addToBoardContainer');
+        show();
     } else {
-        hiddenContainer.classList.add('d-none');
-        hiddenContainer.classList.remove('addToBoardContainer');
-        document.getElementById('detailsInfo').style.overflow = 'hidden';
-        document.getElementById('backlogRow').style.lineHeight = '60px';
-        document.getElementById('backlogRow').style.maxHeight = '60px';
-        document.getElementById('secondGap').style.alignItems = 'center';
-
+        hide();
     }
 
 }
 
-// function show() {
-//     document.getElementById('detailsInfo').style.overflow = 'unset';
-//     document.getElementById('backlogRow').style.lineHeight = 'unset';
-//     document.getElementById('backlogRow').style.maxHeight = 'unset';
-//     document.getElementById('secondGap').style.alignItems = 'center';
-//     hiddenContainer.classList.remove('d-none');
-//     hiddenContainer.classList.add('addToBoardContainer');
-// }
+function show() {
+    let hiddenContainer = document.getElementById('addToBoard');
 
-// function hide() {
-//     hiddenContainer.classList.add('d-none');
-//     hiddenContainer.classList.remove('addToBoardContainer');
-//     document.getElementById('detailsInfo').style.overflow = 'hidden';
-//     document.getElementById('backlogRow').style.lineHeight = '60px';
-//     document.getElementById('backlogRow').style.maxHeight = '60px';
-//     document.getElementById('secondGap').style.alignItems = 'center';
-// }
+    document.getElementById('detailsInfo').style.overflow = 'unset';
+    document.getElementById('backlogRow').style.lineHeight = 'unset';
+    document.getElementById('backlogRow').style.maxHeight = 'unset';
+    document.getElementById('secondGap').style.alignItems = 'center';
+    document.getElementById('backlogRow').style.marginBottom = 'unset';
+    document.getElementById('backlogRow').style.paddingBottom = '8px';
+    hiddenContainer.classList.remove('d-none');
+    hiddenContainer.classList.add('addToBoardContainer');
+}
+
+function hide() {
+    let hiddenContainer = document.getElementById('addToBoard');
+
+    hiddenContainer.classList.add('d-none');
+    document.getElementById('detailsInfo').style.overflow = 'hidden';
+    document.getElementById('backlogRow').style.lineHeight = '60px';
+    document.getElementById('backlogRow').style.maxHeight = '60px';
+    document.getElementById('secondGap').style.alignItems = 'center';
+    document.getElementById('backlogRow').style.marginBottom = '8px';
+    document.getElementById('backlogRow').style.paddingBottom = 'unset';
+}

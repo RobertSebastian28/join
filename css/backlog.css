@@ -65,7 +65,19 @@
 
 .addToBoardContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
+.section {
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.section:hover {
+    cursor: pointer;
+    background-color: rgba(211, 211, 211, 0.4);
 }
 
 @media (max-width:870px) {
