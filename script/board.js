@@ -1,7 +1,6 @@
 
 let boards = ['todo', 'progress', 'testing', 'done'];
 let currentDrag;
-let ids = [];
 
 
 /**
@@ -13,11 +12,7 @@ function updateHTML() {
         let column = data.filter(cat => cat['board'] == board);
         document.getElementById(board).innerHTML = '';
         forLoopForUpdateHtml(column, board);
-        if (board == 'done') {
-            ids.push(document.querySelector('[id*="undefined"]').id);
-        }
     }
-    ids.forEach(e => document.getElementById(e).classList.add('d-none'));
 }
 
 /**
@@ -28,7 +23,7 @@ function updateHTML() {
 function forLoopForUpdateHtml(column, board) {
     for (let j = 0; j < column.length; j++) {
         const element = column[j];
-        document.getElementById(board).innerHTML += generateHtml(element);
+        document.getElementById(board).innerHTML += generateHtml(element, board);
     }
 }
 /**
@@ -37,7 +32,7 @@ function forLoopForUpdateHtml(column, board) {
  * @param {*} element is the content of the JSON ARRAY at defined index.
  * @returns HTML
  */
-function generateHtml(element) {
+function generateHtml(element, board) {
     let id = data.indexOf(element);
     let boardId = boards.indexOf(data[id]['board']);
     boardId++;
@@ -45,19 +40,22 @@ function generateHtml(element) {
     let event = new Date(element['dueDate']);
     let options = { year: 'numeric', month: 'long', day: 'numeric' };
     let date = event.toLocaleDateString('de-DE', options);
-    return htmlForGenerateHTML(element, nextBoard, id, date);
+    let nextButton = '';
+    return htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard);
 }
 
 /**
  * returns the HTML for the tickets
  * 
  * @param {*} element is the content of the JSON ARRAY at defined index.
- * @param {*} nextBoard tells the next board in row
  * @param {*} id the id of the ticket
  * @param {*} date the dueDate of the Ticket readable
  * @returns HTML
  */
-function htmlForGenerateHTML(element, nextBoard, id, date) {
+function htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard) {
+    if (board !== 'done') {
+        nextButton = `<a href="#" class="btn btn-primary mobile-button" onclick="sendToNext(${id})">to ${nextBoard}</a>`;
+    }
     return `
     <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})"><div class="card-body">
             <h5 class="card-title"> ${element['title']}</h5>
@@ -65,9 +63,8 @@ function htmlForGenerateHTML(element, nextBoard, id, date) {
             <p class="card-text"><h6><i>urgency:</i></h6> ${element['urgency']}</p>
             <p class="card-text"><h6><i>due to:</i></h6> ${date}</p>
             <p class="card-text"><h6><i>assigned to:</i></h6> ${element['assignedTo']}</p>
-            <div class="ticket-buttons"><a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a>
-            <a href="#" class="btn btn-primary mobile-button" onclick="sendToNext(${id})" id="button${id}${nextBoard}">to ${nextBoard}</a></div>
-        </div></div>`;
+            <div class="ticket-buttons"  id="buttons${id}"><a href="#" class="btn btn-primary" onclick="deleteTicket(${id})">delete</a>${nextButton}
+            </div></div></div>`;
 }
 
 /**
@@ -78,7 +75,6 @@ function htmlForGenerateHTML(element, nextBoard, id, date) {
 function startDrag(id) {
     currentDrag = id;
     if (data[currentDrag]['board'] == 'done') {
-        ids = [];
     }
 }
 
