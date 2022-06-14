@@ -1,68 +1,60 @@
 //testing Data:
 
-let data = [{
+let data = [
+    {
         "title": "test1",
         "description": "blablabla1",
         "board": "backlog",
-        "dueDate": 1655215119231,
+        "dueDate": 3135416446,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
-    },
-    {
+    }, {
         "title": "test2",
-        "description": "blablabla2 dsjhf asdkhgflkasdj hflksjdhflk asdhkflhlkj dlkfhak dhflkhasdlk fhlksjdhflk asdhfksd hfkaskghd gkhadlkgh aphdip ",
+        "description": "blablabla2",
         "board": "todo",
-        "dueDate": 1655215119231,
+        "dueDate": 1646514654,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
-    },
-    {
+    }, {
         "title": "test3",
-        "description": "blablabla3",
+        "description": "blablabla1",
         "board": "progress",
-        "dueDate": 1655215119231,
+        "dueDate": 3164684685,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
-    },
-    {
+    }, {
         "title": "test4",
-        "description": "blablabla4",
+        "description": "blablabla1",
         "board": "testing",
-        "dueDate": 1655215119231,
+        "dueDate": 6156468469,
+        "category": "Marketing",
+        "urgency": "high",
+        "assignedTo": "no one"
+    }, {
+        "title": "test5",
+        "description": "blablabla1",
+        "board": "done",
+        "dueDate": 651464151,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
     },
-    {
-        "title": "test5",
-        "description": "blablabla5",
-        "board": "done",
-        "dueDate": 1655215119231,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    }
+
 ];
+
+
+
+setURL('../smallest_backend_ever');
+
 
 /**
  * saves to backend.   // has to be checked if it works (note sure if right)
  */
 function saveAtBackend() {
-    let dataToText = JSON.stringify(data);
-    backend.setItem('data', dataToText);
-}
-
-/**
- * loads from backend.   // has to be checked if it works (note sure if right)
- */
-function loadFromBackend() {
-    let textToData = backend.getItem('data');
-    if (textToData) {
-        data = JSON.parse(textToData);
-    }
+    backend.setItem('data', JSON.stringify(data));
 }
 
 /**
@@ -71,6 +63,8 @@ function loadFromBackend() {
  */
 async function init(page) {
     await includeHTML();
+    await downloadFromServer();
+    data = JSON.parse(backend.getItem('data')) || [];
     changeColorOfNavItem(page);
 }
 

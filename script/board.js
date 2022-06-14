@@ -13,6 +13,7 @@ function updateHTML() {
         document.getElementById(board).innerHTML = '';
         forLoopForUpdateHtml(column, board);
     }
+    saveAtBackend();
 }
 
 /**
