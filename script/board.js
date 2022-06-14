@@ -17,6 +17,7 @@ function updateHTML() {
             document.getElementById(board).innerHTML += generateHtml(element);
         }
     }
+    document.getElementById('buttonundefined').classList.add('d-none');
 }
 
 /**
@@ -27,19 +28,17 @@ function updateHTML() {
  */
 function generateHtml(element) {
     let id = data.indexOf(element);
+    let nextBoard = getNextBoard(id);
     return `
-    <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})">
-        <div class="card-body">
+    <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})"><div class="card-body">
             <h5 class="card-title"> ${element['title']}</h5>
             <p class="card-text">desription: ${element['description']}</p>
             <p class="card-text">urgency: ${element['urgency']}</p>
             <p class="card-text">due to:${element['dueDate']}</p>
             <p class="card-text">assignedto: ${element['assignedTo']}</p>
-            <div class="ticket-buttons">
-            <a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a>
-            <a href="#" class="btn btn-primary mobile-button"  onclick="sendToNext(${id})">next</a></div>
-        </div>
-    </div>`;
+            <div class="ticket-buttons"><a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a>
+            <a href="#" class="btn btn-primary mobile-button" onclick="sendToNext(${id})" id="button${nextBoard}">to ${nextBoard}</a></div>
+        </div></div>`;
 }
 
 /**
@@ -71,7 +70,6 @@ function drop(board) {
     updateHTML();
 }
 
-
 /**
  * deletes ticket from page and array
  * 
@@ -81,7 +79,6 @@ function deleteTicket(id) {
     data.splice(id, 1);
     updateHTML();
 }
-
 
 /**
  * endarkens the card while ticket is dragged over
@@ -101,13 +98,28 @@ function endarkenOff(id) {
     document.getElementById(id).classList.remove('drag-over');
 }
 
-
+/**
+ * sends ticket to the next board (e.g. ticket in todo will be sent to in progress)
+ * 
+ * @param {*} id  tells which ticket
+ */
 function sendToNext(id) {
     startDrag(id);
-    let boardId = boards.indexOf(data[id]['board']);
-    boardId++;
-    nextBoard = boards[boardId];
+    let nextBoard = getNextBoard(id);
     if (boardId < 4) {
         drop(nextBoard);
     }
+}
+
+/**
+ * gets the string of the next board.
+ * 
+ * @param {*} id tells which ticket 
+ * @returns  returns the name of the next board.
+ */
+function getNextBoard(id) {
+    let boardId = boards.indexOf(data[id]['board']);
+    boardId++;
+    nextBoard = boards[boardId];
+    return nextBoard;
 }
