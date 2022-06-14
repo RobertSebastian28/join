@@ -1,11 +1,11 @@
 //testing Data:
 
-let data = [
+let data2 = [
     {
         "title": "test1",
         "description": "blablabla1",
         "board": "backlog",
-        "dueDate": 3135416446,
+        "dueDate": 31354216446,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -13,7 +13,7 @@ let data = [
         "title": "test2",
         "description": "blablabla2",
         "board": "todo",
-        "dueDate": 1646514654,
+        "dueDate": 16462514654,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -21,7 +21,7 @@ let data = [
         "title": "test3",
         "description": "blablabla1",
         "board": "progress",
-        "dueDate": 3164684685,
+        "dueDate": 316468224685,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -29,7 +29,7 @@ let data = [
         "title": "test4",
         "description": "blablabla1",
         "board": "testing",
-        "dueDate": 6156468469,
+        "dueDate": 615646228469,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -37,24 +37,36 @@ let data = [
         "title": "test5",
         "description": "blablabla1",
         "board": "done",
-        "dueDate": 651464151,
+        "dueDate": 651462224151,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
     },
 
 ];
-
+let data = []
 
 
 setURL('../smallest_backend_ever');
 
 
 /**
+ * loads data from Server and writes it in the array data.
+ */
+async function loadFromBackend() {
+    data = JSON.parse(backend.getItem('data')) || [];
+
+
+}
+/**
  * saves to backend.   // has to be checked if it works (note sure if right)
  */
 function saveAtBackend() {
     backend.setItem('data', JSON.stringify(data));
+}
+
+async function trySave() {
+   await backend.setItem('data', JSON.stringify(data2));
 }
 
 /**
@@ -64,8 +76,10 @@ function saveAtBackend() {
 async function init(page) {
     await includeHTML();
     await downloadFromServer();
-    data = JSON.parse(backend.getItem('data')) || [];
+    await loadFromBackend();
+    console.log(backend.getItem('data'));
     changeColorOfNavItem(page);
+    if (page == 'board') { updateHTML(); }
 }
 
 /**
