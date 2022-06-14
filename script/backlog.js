@@ -1,3 +1,14 @@
+// let data = [{
+//     "title": "test1",
+//     "description": "blablabla1",
+//     "board": "backlog",
+//     "dueDate": 0,
+//     "category": "Marketing",
+//     "urgency": "high",
+//     "assignedTo": "no one"
+// }]
+
+
 function responsiveHead() {
 
     if (window.innerWidth < 870) {
@@ -27,19 +38,16 @@ function renderBacklog() {
             et officia sequi.</div>
         </div>
     </div>
-        <div id="addToBoard" class="d-none addToBoardContainer">
-            <div class="section">To Do</div>
-            <div class="section">In Progress</div>
-            <div class="section">Testing</div>
-            <div class="section">Done</div>
-        <div>
+        <div id="addToBoard" style="display:none">
+            <div class="section">Send to Board</div>
+    <div>
     `
 }
 
 function showTask() {
     let hiddenContainer = document.getElementById('addToBoard');
 
-    if (hiddenContainer.classList = 'd-none') {
+    if (hiddenContainer.style.display = 'none') {
         show();
     } else {
         hide();
@@ -56,18 +64,40 @@ function show() {
     document.getElementById('secondGap').style.alignItems = 'center';
     document.getElementById('backlogRow').style.marginBottom = 'unset';
     document.getElementById('backlogRow').style.paddingBottom = '8px';
-    hiddenContainer.classList.remove('d-none');
+    hiddenContainer.style.display = 'flex';
     hiddenContainer.classList.add('addToBoardContainer');
 }
 
 function hide() {
     let hiddenContainer = document.getElementById('addToBoard');
 
-    hiddenContainer.classList.add('d-none');
+    hiddenContainer.classList.remove('addToBoardContainer');
+    hiddenContainer.style.display = 'none';
     document.getElementById('detailsInfo').style.overflow = 'hidden';
     document.getElementById('backlogRow').style.lineHeight = '60px';
     document.getElementById('backlogRow').style.maxHeight = '60px';
-    document.getElementById('secondGap').style.alignItems = 'center';
     document.getElementById('backlogRow').style.marginBottom = '8px';
     document.getElementById('backlogRow').style.paddingBottom = 'unset';
 }
+
+
+
+
+
+// /**
+//  * saves to backend.   // has to be checked if it works (note sure if right)
+//  */
+// function saveAtBackend() {
+//     let dataToText = JSON.stringify(data);
+//     backend.setItem('data', dataToText);
+// }
+
+// /**
+//  * loads from backend.   // has to be checked if it works (note sure if right)
+//  */
+// function loadFromBackend() {
+//     let textToData = backend.getItem('data');
+//     if (textToData) {
+//         data = JSON.parse(textToData);
+//     }
+// }
