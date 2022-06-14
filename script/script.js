@@ -6,7 +6,7 @@ let data = [
         "title": "test1",
         "description": "blablabla1",
         "board": "backlog",
-        "dueDate": 0,
+        "dueDate": 1655215119231,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -15,7 +15,7 @@ let data = [
         "title": "test2",
         "description": "blablabla2 dsjhf asdkhgflkasdj hflksjdhflk asdhkflhlkj dlkfhak dhflkhasdlk fhlksjdhflk asdhfksd hfkaskghd gkhadlkgh aphdip ",
         "board": "todo",
-        "dueDate": 0,
+        "dueDate": 1655215119231,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -24,7 +24,7 @@ let data = [
         "title": "test3",
         "description": "blablabla3",
         "board": "progress",
-        "dueDate": 0,
+        "dueDate": 1655215119231,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -33,7 +33,7 @@ let data = [
         "title": "test4",
         "description": "blablabla4",
         "board": "testing",
-        "dueDate": 0,
+        "dueDate": 1655215119231,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"
@@ -42,7 +42,7 @@ let data = [
         "title": "test5",
         "description": "blablabla5",
         "board": "done",
-        "dueDate": 0,
+        "dueDate": 1655215119231,
         "category": "Marketing",
         "urgency": "high",
         "assignedTo": "no one"

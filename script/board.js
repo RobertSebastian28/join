@@ -1,7 +1,7 @@
 
 let boards = ['todo', 'progress', 'testing', 'done'];
 let currentDrag;
-
+let ids = [];
 
 
 /**
@@ -12,14 +12,25 @@ function updateHTML() {
         let board = boards[i];
         let column = data.filter(cat => cat['board'] == board);
         document.getElementById(board).innerHTML = '';
-        for (let j = 0; j < column.length; j++) {
-            const element = column[j];
-            document.getElementById(board).innerHTML += generateHtml(element);
+        forLoopForUpdateHtml(column, board);
+        if (board == 'done') {
+            ids.push(document.querySelector('[id*="undefined"]').id);
         }
     }
-    document.getElementById('buttonundefined').classList.add('d-none');
+    ids.forEach(e => document.getElementById(e).classList.add('d-none'));
 }
 
+/**
+ * loops through data and generates HTML
+ * 
+ * @param {*} column tells which board
+ */
+function forLoopForUpdateHtml(column, board) {
+    for (let j = 0; j < column.length; j++) {
+        const element = column[j];
+        document.getElementById(board).innerHTML += generateHtml(element);
+    }
+}
 /**
  * Returns a draggable "ticket" (div) with the content of the JSON-array.
  * 
@@ -28,16 +39,34 @@ function updateHTML() {
  */
 function generateHtml(element) {
     let id = data.indexOf(element);
-    let nextBoard = getNextBoard(id);
+    let boardId = boards.indexOf(data[id]['board']);
+    boardId++;
+    let nextBoard = getNextBoard(boardId);
+    let event = new Date(element['dueDate']);
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let date = event.toLocaleDateString('de-DE', options);
+    return htmlForGenerateHTML(element, nextBoard, id, date);
+}
+
+/**
+ * returns the HTML for the tickets
+ * 
+ * @param {*} element is the content of the JSON ARRAY at defined index.
+ * @param {*} nextBoard tells the next board in row
+ * @param {*} id the id of the ticket
+ * @param {*} date the dueDate of the Ticket readable
+ * @returns HTML
+ */
+function htmlForGenerateHTML(element, nextBoard, id, date) {
     return `
     <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})"><div class="card-body">
             <h5 class="card-title"> ${element['title']}</h5>
-            <p class="card-text">desription: ${element['description']}</p>
-            <p class="card-text">urgency: ${element['urgency']}</p>
-            <p class="card-text">due to:${element['dueDate']}</p>
-            <p class="card-text">assignedto: ${element['assignedTo']}</p>
+            <p class="card-text"><h6><i>desription:</i></h6> ${element['description']}</p>
+            <p class="card-text"><h6><i>urgency:</i></h6> ${element['urgency']}</p>
+            <p class="card-text"><h6><i>due to:</i></h6> ${date}</p>
+            <p class="card-text"><h6><i>assigned to:</i></h6> ${element['assignedTo']}</p>
             <div class="ticket-buttons"><a href="#" class="btn btn-primary"  onclick="deleteTicket(${id})">delete</a>
-            <a href="#" class="btn btn-primary mobile-button" onclick="sendToNext(${id})" id="button${nextBoard}">to ${nextBoard}</a></div>
+            <a href="#" class="btn btn-primary mobile-button" onclick="sendToNext(${id})" id="button${id}${nextBoard}">to ${nextBoard}</a></div>
         </div></div>`;
 }
 
@@ -48,6 +77,9 @@ function generateHtml(element) {
  */
 function startDrag(id) {
     currentDrag = id;
+    if (data[currentDrag]['board'] == 'done') {
+        ids = [];
+    }
 }
 
 /**
@@ -105,7 +137,9 @@ function endarkenOff(id) {
  */
 function sendToNext(id) {
     startDrag(id);
-    let nextBoard = getNextBoard(id);
+    let boardId = boards.indexOf(data[id]['board']);
+    boardId++;
+    let nextBoard = getNextBoard(boardId);
     if (boardId < 4) {
         drop(nextBoard);
     }
@@ -118,8 +152,6 @@ function sendToNext(id) {
  * @returns  returns the name of the next board.
  */
 function getNextBoard(id) {
-    let boardId = boards.indexOf(data[id]['board']);
-    boardId++;
-    nextBoard = boards[boardId];
+    nextBoard = boards[id];
     return nextBoard;
 }
