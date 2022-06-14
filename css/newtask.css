@@ -1,10 +1,18 @@
-.add-task-head {
-    margin-top: 16px;
+.header {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
     margin-left: 25px;
 }
 
-.add-task-subtitle {
-    color: #0D6EFD;
+.right-container {
+    width: 100%;
+}
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;
 }
 
 .add-task-content {
@@ -27,18 +35,25 @@ textarea {
     height: 100px;
     min-width: 450px;
     font-size: 25px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
 }
 
 #add-task-dueDate {
     height: 100px;
     min-width: 450px;
     font-size: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
 }
 
 select {
     height: 100px;
     min-width: 450px;
     font-size: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
 }
 
 .add-task-assigned-to {

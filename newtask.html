@@ -19,14 +19,14 @@
     <title>newtask</title>
 </head>
 
-<body onload="init('newTask')">
+<body onload="init('newTask'), loadAllTasks()">
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
-            <div class="add-task-head">
+            <header class="header">
                 <h1>Add Task</h1>
-                <span class="add-task-subtitle">Learning Managment System Project</span>
-            </div>
+                <p class="text-primary">Learning Managment System Project</p>
+            </header>
             <form onsubmit="addToAllTasks()" class="add-task-center">
                 <div class="add-task-content">
                     <div class="add-task-margin-bottom">
@@ -60,7 +60,7 @@
                     <div class="add-task-assigned-to add-task-margin-top-">
                         <h3>Assigned To</h3>
                         <div class="add-task-margin-top">
-                            <img class="profile-pic" id="profile-pic" src="./img/robertS.jpg">
+                            <img class="profile-pic" id="profile-pic" src="./img/user_dummy.png">
                             <img id="icon-plus" src="./img/icon plus.png">
                         </div>
                         <div class="add-task-buttons">

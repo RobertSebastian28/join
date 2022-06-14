@@ -1,5 +1,3 @@
-let allTasks = [];
-
 function addToAllTasks() {
     let title = document.getElementById('add-task-title');
     let dueDate = document.getElementById('add-task-dueDate');
@@ -17,15 +15,24 @@ function addToAllTasks() {
        "description": description.value
     };
 
-    allTasks.push(tasks);
-
-    deleteInputValue();
+    data.push(tasks);
+    save();
 }
 
-function deleteInputValue() { // durch <form> vieleicht nicht notwendig
+function save() {
+    let allTasksAsString = JSON.stringify(data);
+    localStorage.setItem('all tasks', allTasksAsString);
+}
+
+function loadAllTasks() {
+    let allTasksAsString = localStorage.getItem('all tasks');
+    data = JSON.parse(allTasksAsString);
+}
+
+/* function deleteInputValue() { // durch <form> vieleicht nicht notwendig
     document.getElementById('add-task-title').value = '';
     document.getElementById('add-task-dueDate').value = '';
     document.getElementById("add-task-category").selectedIndex = 0;
     document.getElementById("add-task-urgency").selectedIndex = 0;
     document.getElementById('add-task-description').value = '';
-}
+} */
