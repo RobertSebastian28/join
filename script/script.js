@@ -1,6 +1,6 @@
 //testing Data:
 
-let data2 = [
+let data = [
     {
         "title": "test1",
         "description": "blablabla1",
@@ -44,20 +44,16 @@ let data2 = [
     },
 
 ];
-let data = []
-
 
 setURL('../smallest_backend_ever');
-
 
 /**
  * loads data from Server and writes it in the array data.
  */
 async function loadFromBackend() {
     data = JSON.parse(backend.getItem('data')) || [];
-
-
 }
+
 /**
  * saves to backend.   // has to be checked if it works (note sure if right)
  */
@@ -65,9 +61,6 @@ function saveAtBackend() {
     backend.setItem('data', JSON.stringify(data));
 }
 
-async function trySave() {
-   await backend.setItem('data', JSON.stringify(data2));
-}
 
 /**
  * 
