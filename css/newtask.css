@@ -7,7 +7,7 @@
 }
 
 .right-container {
-    width: 100%;
+    max-width: 2000px;
 }
 
 .text-primary {
@@ -16,15 +16,16 @@
 }
 
 .add-task-content {
-    display: flex;
+    display:inline-flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 70vw;
+    width: 1000px;
 }
 
-.add-task-center {
+form {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
@@ -102,4 +103,31 @@ select {
 .btn {
     height: 50px;
     width: 160px;
+}
+
+@media(max-width:1160px) {
+    .add-task-content  {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 0px 20px;
+    }
+}
+
+@media(max-width:1115px) {
+    .add-task-content {
+        margin-left: -5%;
+    }
+}
+
+@media(max-width:1085px) {
+    .add-task-content {
+        width: 490px;
+    }
+}
+
+@media(max-width:610px) {
+    form {
+        margin-top: 10px;
+    }
 }

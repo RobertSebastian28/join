@@ -21,13 +21,9 @@ function addToAllTasks() {
 
 function save() {
     let allTasksAsString = JSON.stringify(data);
-    localStorage.setItem('all tasks', allTasksAsString);
+    backend.setItem('all tasks', allTasksAsString);
 }
 
-function loadAllTasks() {
-    let allTasksAsString = localStorage.getItem('all tasks');
-    data = JSON.parse(allTasksAsString);
-}
 
 /* function deleteInputValue() { // durch <form> vieleicht nicht notwendig
     document.getElementById('add-task-title').value = '';
