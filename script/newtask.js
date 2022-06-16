@@ -10,19 +10,20 @@ function addToAllTasks() {
     let tasks = {
        "title": title.value,
        "dueDate": dueDate.value,
+       "board": "backlog",
        "category": category,
        "urgency": urgency,
        "description": description.value
     };
 
     data.push(tasks);
-    save();
+    saveAtBackend(); 
 }
 
-function save() {
+/* function save() {
     let allTasksAsString = JSON.stringify(data);
     backend.setItem('all tasks', allTasksAsString);
-}
+} */
 
 
 /* function deleteInputValue() { // durch <form> vieleicht nicht notwendig
