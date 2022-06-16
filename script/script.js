@@ -51,16 +51,17 @@ setURL('../smallest_backend_ever');
  * loads data from Server and writes it in the array data.
  */
 async function loadFromBackend() {
-    data = JSON.parse(backend.getItem('data')) || [];
+    let dataAsJSON = await backend.getItem('data');
+    data = JSON.parse(dataAsJSON) || [];
 }
 
 /**
  * saves to backend.   // has to be checked if it works (note sure if right)
  */
-function saveAtBackend() {
-    backend.setItem('data', JSON.stringify(data));
+async function saveAtBackend() {
+    let dataAsJSON = JSON.stringify(data);
+   await backend.setItem('data', dataAsJSON );
 }
-
 
 /**
  * 
@@ -70,7 +71,6 @@ async function init(page) {
     await includeHTML();
     await downloadFromServer();
     await loadFromBackend();
-    console.log(backend.getItem('data'));
     changeColorOfNavItem(page);
     if (page == 'board') { updateHTML(); }
 }
