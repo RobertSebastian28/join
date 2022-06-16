@@ -70,13 +70,21 @@ function htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard) {
             </div></div></div>`;
 }
 
-
+/**
+ *makes text @ ticket visible
+ * @param {*} id tells which ticket
+ */
 function showMoreTicket(id) {
     document.getElementById('moreInfo' + id).classList.remove('d-none');
     document.getElementById('chevron' + id).setAttribute('onclick', `hideMoreTicket(${id})`);
     document.getElementById('chevronImg' + id).src = "././img/less.png";
 }
 
+/**
+ * hides text @ ticket
+ * 
+ * @param {*} id  tells which ticket
+ */
 function hideMoreTicket(id) {
     document.getElementById('moreInfo' + id).classList.add('d-none');
     document.getElementById('chevron' + id).setAttribute('onclick', `showMoreTicket(${id})`);
