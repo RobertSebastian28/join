@@ -60,12 +60,27 @@ function htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard) {
     return `
     <div class="card sub-card" draggable ="true" ondragstart="startDrag(${id})"><div class="card-body">
             <h5 class="card-title"> ${element['title']}</h5>
-            <p class="card-text"><h6><i>desription:</i></h6> ${element['description']}</p>
-            <p class="card-text"><h6><i>urgency:</i></h6> ${element['urgency']}</p>
-            <p class="card-text"><h6><i>due to:</i></h6> ${date}</p>
-            <p class="card-text"><h6><i>assigned to:</i></h6> ${element['assignedTo']}</p>
+            <div id ="chevron${id}" class="chevron" onclick="showMoreTicket(${id})"><img id="chevronImg${id}" src="././img/more.png"></div>
+            <div id="moreInfo${id}" class="ticketInfo d-none">
+            <p class="card-text"><u><i>desription:</i></u>&ensp; ${element['description']}</p>
+            <p class="card-text"><u><i>urgency:</i></u>&ensp; ${element['urgency']}</p>
+            <p class="card-text"><u><i>due to:</i></u>&ensp; ${date}</p>
+            <p class="card-text"><u><i>assigned to:</i></u>&ensp; ${element['assignedTo']}</p><br></Div>
             <div class="ticket-buttons"  id="buttons${id}"><a href="#" class="btn btn-primary" onclick="deleteTicket(${id})">delete</a>${nextButton}
             </div></div></div>`;
+}
+
+
+function showMoreTicket(id) {
+    document.getElementById('moreInfo' + id).classList.remove('d-none');
+    document.getElementById('chevron' + id).setAttribute('onclick', `hideMoreTicket(${id})`);
+    document.getElementById('chevronImg' + id).src = "././img/less.png";
+}
+
+function hideMoreTicket(id) {
+    document.getElementById('moreInfo' + id).classList.add('d-none');
+    document.getElementById('chevron' + id).setAttribute('onclick', `showMoreTicket(${id})`);
+    document.getElementById('chevronImg' + id).src = "././img/more.png";
 }
 
 /**
