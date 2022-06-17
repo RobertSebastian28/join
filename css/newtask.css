@@ -128,10 +128,81 @@ select {
     .add-task-content {
         width: 490px;
     }
-}
 
-@media(max-width:610px) {
-    form {
-        margin-top: 10px;
+    .add-task-assigned-to {
+        padding-top: 65px;
+    }
+
+    .add-task-buttons {
+        margin-top: 35px;
+        padding-bottom: 30px;
+        justify-content: center;
     }
 }
+
+@media(max-width:635px) {
+    form {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .add-task-content {
+        width: 415px;
+    }
+
+    textarea {
+        min-width: 80px;
+        height: 70px;
+    }
+
+    #add-task-dueDate {
+        min-width: 415px;
+        height: 70px;
+    }
+
+    select {
+        min-width: 415px;
+        height: 70px;
+    }
+
+    .add-task-assigned-to {
+        min-width: 400px;
+    }
+
+    .add-task-margin-bottom {
+        margin-bottom: 40px;
+    }
+}
+
+@media(max-width:593px) {
+    form {
+        margin-left: 10px;
+        padding: 0;
+    }
+
+    .add-task-content {
+        width: 320px;
+    }
+
+    textarea {
+        width: 300px;
+    }
+
+    #add-task-dueDate {
+        min-width: 300px;
+    }
+
+    .add-task-assigned-to {
+        min-width: 300px;
+    }
+
+    select {
+        min-width: 300px;
+    }
+
+    .add-task-margin-bottom {
+        margin-bottom: 40px;
+    }
+
+}
+

@@ -20,16 +20,10 @@ function addToAllTasks() {
     saveAtBackend(); 
 }
 
-/* function save() {
-    let allTasksAsString = JSON.stringify(data);
-    backend.setItem('all tasks', allTasksAsString);
-} */
-
-
-/* function deleteInputValue() { // durch <form> vieleicht nicht notwendig
+function deleteInputValue() { 
     document.getElementById('add-task-title').value = '';
     document.getElementById('add-task-dueDate').value = '';
     document.getElementById("add-task-category").selectedIndex = 0;
     document.getElementById("add-task-urgency").selectedIndex = 0;
     document.getElementById('add-task-description').value = '';
-} */
+}
