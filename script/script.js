@@ -45,7 +45,7 @@ let data = [
 
 ];
 
-setURL('../smallest_backend_ever');
+//setURL('../smallest_backend_ever');
 
 /**
  * loads data from Server and writes it in the array data.
@@ -120,4 +120,15 @@ function forLoopForChangeColorOfNavItem(elementList) {
         document.getElementById(element + 0).classList.add('inactive-s');
         document.getElementById(element + 0).classList.remove('active-s');
     }
+}
+
+
+function logInCheck(){
+
+if(document.getElementById('exampleInputEmail1').value || document.getElementById('exampleInputPassword1').value){
+document.getElementById('passwordInfo').classList.remove('d-none');
+}
+else if(document.getElementById('exampleCheck1').checked){
+    window.open('./board.html', "_self");
+}
 }

@@ -1,4 +1,2 @@
-Kleine Karten(board):   Design allgemein
-                        Soll es bearbeitbar sein?
-                        Die Beschreibung evtl. verstecken und beim Klicken aufs Board vergrößern (modal)?
+Kleine Karten(board):   Darstellung urgency?
 
