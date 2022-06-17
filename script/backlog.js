@@ -6,7 +6,7 @@ const colors = {
 
 ////////////////////filters the JSON with data for backlog///////////////
 const backlogData = data.filter(data => data.board == 'backlog');
-console.log(backlogData);
+
 
 
 //////////////////responsive category head////////////////////////////////
@@ -35,6 +35,7 @@ function renderBacklog() {
         let priority = task['urgency'];
         let color = colors[priority.toLowerCase()];
 
+        container.innerHTML += '';
         container.innerHTML += `
     
     <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
@@ -44,12 +45,12 @@ function renderBacklog() {
             <div id="assignedToInfo">${assignedTo}</div>
         </div>
         <div id="secondGap${i}" class="d-flex secondGap">
-            <div id="categoryInfo${i}">${category}</div>
+            <div id="categoryInfo${i}"><b>${category}</b></div>
             <div id="detailsInfo${i}">${details}</div>
         </div>
     </div>
         <div id="addToBoard${i}" style="display:none; border-color: ${color}">
-            <div class="section" onclick="sendTaskToBoard(${task})">Send to Board</div>
+            <div class="section" onclick="sendTaskToBoard(${i})">Send to Board</div>
     <div>
     `
     }
@@ -98,7 +99,7 @@ function hide(i) {
 }
 
 /////////////send the selected task to the board-site/////////////////////
-function sendTaskToBoard(task) {
-    task['board'] = 'todo';
-    renderBacklog();
+function sendTaskToBoard(i) {
+    backlogData[i]['board'] = 'todo';
+    console.log(backlogData);
 }
