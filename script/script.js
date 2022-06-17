@@ -99,7 +99,7 @@ async function includeHTML() {
  */
 function changeColorOfNavItem(page) {
     let currentPage = 'menu' + page[0].toUpperCase() + page.substring(1);
-    let elementList = ['menuBoard', 'menuBacklog', 'menuNewTask', 'menuHelp'];
+    let elementList = ['menuBoard', 'menuBacklog', 'menuNewTask', 'menuHelp', 'menuImprint', 'menuPrivacy'];
     let currentId = elementList.indexOf(currentPage);
     document.getElementById(currentPage).classList.add('active-font');
     document.getElementById(currentPage).classList.remove('inactive-font');

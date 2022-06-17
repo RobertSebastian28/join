@@ -100,6 +100,6 @@ function hide(i) {
 
 /////////////send the selected task to the board-site/////////////////////
 function sendTaskToBoard(i) {
-    backlogData[i]['board'] = 'todo';
+    backlogData[i]['board'] = 'todo'; 
     console.log(backlogData);
 }
