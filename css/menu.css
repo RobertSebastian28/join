@@ -58,7 +58,7 @@
 }
 
 .user-logo {
-    margin-top: 256px;
+    margin-top: 96px;
     margin-left: 34px;
     border-radius: 100%;
     border-style: solid;
@@ -70,6 +70,10 @@
 .menu-row {
     height: 100%;
     width: 100%;
+}
+
+.space-row {
+    padding-top: 64px;
 }
 
 nav input[type="checkbox"] {
@@ -182,6 +186,14 @@ nav input[type="checkbox"] {
         padding-top: 8px;
     }
 
+    .space-row {
+        padding-top: 32px;
+    }
+
+    .last-row {
+        padding-bottom: 8px;
+    }
+
     .active-s {
         min-height: 28px;
         min-width: 6px;
@@ -197,4 +209,6 @@ nav input[type="checkbox"] {
     .user-logo {
         display: none;
     }
+
+
 }
