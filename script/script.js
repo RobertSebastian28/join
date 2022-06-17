@@ -45,7 +45,7 @@ let data = [
 
 ];
 
-//setURL('../smallest_backend_ever');
+setURL('../smallest_backend_ever');
 
 /**
  * loads data from Server and writes it in the array data.
