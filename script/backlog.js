@@ -1,20 +1,15 @@
-// let testData = [{
-//     "title": "test1",
-//     "description": "blablabla1",
-//     "board": "backlog",
-//     "dueDate": 0,
-//     "category": "Marketing",
-//     "urgency": "high",
-//     "assignedTo": "no one"
-// }]
-
 const colors = {
     high: '#ff0000',
     medium: '#ffff00',
     low: '#008000',
 };
 
+////////////////////filters the JSON with data for backlog///////////////
+const backlogData = data.filter(data => data.board == 'backlog');
+console.log(backlogData);
 
+
+//////////////////responsive category head////////////////////////////////
 function responsiveHead() {
 
     if (window.innerWidth < 870) {
@@ -26,12 +21,13 @@ function responsiveHead() {
     }
 }
 
-//////////////////render the data from json to backlog////////////////////
+
+//////////////////render the data from json to display as rows////////////////////
 function renderBacklog() {
     let container = document.getElementById('backlogBox');
 
-    for (let i = 0; i < data.length; i++) {
-        const task = data[i];
+    for (let i = 0; i < backlogData.length; i++) {
+        const task = backlogData[i];
 
         let assignedTo = task['assignedTo'];
         let category = task['category'];
@@ -41,7 +37,7 @@ function renderBacklog() {
 
         container.innerHTML += `
     
-    <div id="backlogRow${i}" onclick="showTask(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
+    <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
         <div class="d-flex align-items-center firstGap">
             
         <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
@@ -60,25 +56,7 @@ function renderBacklog() {
 }
 
 
-/////////////send the selected task to the board/////////////////////
-function sendTaskToBoard(task) {
-
-
-
-}
-
-
-/////////////function for show & hide the full task details////////////
-function showTask(i) {
-    let hiddenContainer = document.getElementById('addToBoard' + i);
-
-    if (hiddenContainer.style.display == 'none') {
-        show(i);
-    } else {
-        hide(i);
-    }
-}
-
+////////////show and hide the container to send the task to board///////////
 function show(i) {
     let hiddenContainer = document.getElementById('addToBoard' + i);
 
@@ -92,18 +70,35 @@ function show(i) {
 
     hiddenContainer.style.display = 'flex';
     hiddenContainer.classList.add('addToBoardContainer');
+    document.getElementById('backlogRow' + i).setAttribute('onclick', `hide(${i})`);
 }
 
 function hide(i) {
     let hiddenContainer = document.getElementById('addToBoard' + i);
 
-    hiddenContainer.classList.remove('addToBoardContainer');
-    hiddenContainer.style.display = 'none';
-    document.getElementById('backlogRow' + i).style.lineHeight = '60px';
-    document.getElementById('backlogRow' + i).style.maxHeight = '60px';
-    document.getElementById('secondGap' + i).style.alignItems = 'unset';
-    document.getElementById('backlogRow' + i).style.marginBottom = '8px';
-    document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
-    document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
-    document.getElementById('backlogRow' + i).style.borderRadius = '5px';
+    if (window.innerWidth > 870) {
+        hiddenContainer.classList.remove('addToBoardContainer');
+        hiddenContainer.style.display = 'none';
+        document.getElementById('backlogRow' + i).style.lineHeight = '60px';
+        document.getElementById('backlogRow' + i).style.maxHeight = '60px';
+        document.getElementById('backlogRow' + i).style.marginBottom = '8px';
+        document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
+        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
+        document.getElementById('backlogRow' + i).style.borderRadius = '5px';
+        document.getElementById('backlogRow' + i).setAttribute('onclick', `show(${i})`);
+    } else {
+        hiddenContainer.classList.remove('addToBoardContainer');
+        hiddenContainer.style.display = 'none';
+        document.getElementById('backlogRow' + i).style.marginBottom = '8px';
+        document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
+        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
+        document.getElementById('backlogRow' + i).style.borderRadius = '5px';
+        document.getElementById('backlogRow' + i).setAttribute('onclick', `show(${i})`);
+    }
+}
+
+/////////////send the selected task to the board-site/////////////////////
+function sendTaskToBoard(task) {
+    task['board'] = 'todo';
+    renderBacklog();
 }
