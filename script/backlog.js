@@ -32,7 +32,6 @@ for (let i = 0; i < data.length; i++) {
     const task = data[i];
    
     if(data[i]['board'] == 'backlog'){
-        console.log(i);
         let assignedTo = task['assignedTo'];
         let category = task['category'];
         let details = task['description'];
@@ -140,5 +139,4 @@ function sendTaskToBoard(i) {
     data[i]["board"] = "todo";
     saveAtBackend();
     renderBacklog();
-
 }
