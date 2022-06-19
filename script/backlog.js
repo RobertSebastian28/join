@@ -10,7 +10,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 
 //////////////////responsive category head////////////////////////////////
-function responsiveHead() {
+/*function responsiveHead() {
 
     if (window.innerWidth < 870) {
         document.getElementById('categoryDetails').classList.add('d-none');
@@ -19,14 +19,50 @@ function responsiveHead() {
         document.getElementById('categoryDetails').classList.remove('d-none');
         document.getElementById('secondGap').classList.add('d-flex');
     }
-}
+}*/
 
 
 //////////////////render the data from json to display as rows////////////////////
 function renderBacklog() {
     let container = document.getElementById('backlogBox');
+    container.innerHTML = '';
 
-    for (let i = 0; i < backlogData.length; i++) {
+for (let i = 0; i < data.length; i++) {
+    const task = data[i];
+   
+    if(data[i]['board'] == 'backlog'){
+        console.log(i);
+        let assignedTo = task['assignedTo'];
+        let category = task['category'];
+        let details = task['description'];
+        let priority = task['urgency'];
+        let color = colors[priority.toLowerCase()];
+
+        container.innerHTML += `
+    
+    <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
+        <div class="d-flex align-items-center firstGap">
+            
+        <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
+            <div id="assignedToInfo">${assignedTo}</div>
+        </div>
+        <div id="secondGap${i}" class="d-flex secondGap">
+            <div id="categoryInfo${i}"><b>${category}</b></div>
+            <div id="detailsInfo${i}">${details}</div>
+        </div>
+    </div>
+        <div id="addToBoard${i}" style="display:none; border-color: ${color}">
+            <div class="section" onclick="sendTaskToBoard(${i})">Send to Board</div>
+    <div>
+    `;
+
+    }
+}
+
+
+
+
+    /*for (let i = 0; i < backlogData.length; i++) {
         const task = backlogData[i];
 
         let assignedTo = task['assignedTo'];
@@ -53,7 +89,7 @@ function renderBacklog() {
             <div class="section" onclick="sendTaskToBoard(${i})">Send to Board</div>
     <div>
     `
-    }
+    }*/
 }
 
 
@@ -100,7 +136,8 @@ function hide(i) {
 
 /////////////send the selected task to the board-site/////////////////////
 function sendTaskToBoard(i) {
-    data[i]['board'] = 'todo';
-    console.log(backlogData);
+    data[i]["board"] = "todo";
+    saveAtBackend();
     renderBacklog();
+
 }

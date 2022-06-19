@@ -129,6 +129,7 @@ function drop(board) {
 function deleteTicket(id) {
     data.splice(id, 1);
     updateHTML();
+    saveAtBackend();
 }
 
 /**
