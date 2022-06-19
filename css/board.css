@@ -31,6 +31,18 @@
     border-radius: 2px;
 }
 
+.borderhigh {
+    border-left: 4px solid red;
+}
+
+.bordermedium {
+    border-left: 4px solid yellow;
+}
+
+.borderlow {
+    border-left: 4px solid green;
+}
+
 .drag-over {
     background-color: rgba(0, 0, 0, 0.2);
 }
