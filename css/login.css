@@ -5,6 +5,17 @@ body {
     align-items: center;
 }
 
+.bg-login {
+    background-image: url("../img/login-bg.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.card {
+    border: 6px solid #02107B;
+    background-color: rgba(56, 202, 251, 0.7);
+}
+
 .password-info {
     color: red;
 }
