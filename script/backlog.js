@@ -35,7 +35,7 @@ function renderBacklog() {
         let priority = task['urgency'];
         let color = colors[priority.toLowerCase()];
 
-        container.innerHTML += '';
+        container.innerHTML = '';
         container.innerHTML += `
     
     <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
@@ -100,6 +100,7 @@ function hide(i) {
 
 /////////////send the selected task to the board-site/////////////////////
 function sendTaskToBoard(i) {
-    backlogData[i]['board'] = 'todo'; 
+    data[i]['board'] = 'todo';
     console.log(backlogData);
+    renderBacklog();
 }
