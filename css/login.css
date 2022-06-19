@@ -7,13 +7,14 @@ body {
 
 .bg-login {
     background-image: url("../img/login-bg.png");
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
 }
 
 .card {
-    border: 6px solid #02107B;
-    background-color: rgba(56, 202, 251, 0.7);
+    border: 5px solid #02107B;
+    background-color: #F4F3FB;
+    /* background-color: rgba(56, 202, 251, 0.7); */
 }
 
 .password-info {
