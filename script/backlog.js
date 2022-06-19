@@ -24,6 +24,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 //////////////////render the data from json to display as rows////////////////////
 function renderBacklog() {
+    loadFromBackend();
     let container = document.getElementById('backlogBox');
     container.innerHTML = '';
 

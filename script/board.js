@@ -7,13 +7,14 @@ let currentDrag;
  * Reads the JSON-array: data and renders the elements in the according div.
  */
 function updateHTML() {
+    loadFromBackend();
     for (let i = 0; i < boards.length; i++) {
         let board = boards[i];
         let column = data.filter(cat => cat['board'] == board);
         document.getElementById(board).innerHTML = '';
         forLoopForUpdateHtml(column, board);
     }
-    saveAtBackend();
+
 }
 
 /**
@@ -118,6 +119,7 @@ function allowDrop(ev) {
  */
 function drop(board) {
     data[currentDrag]['board'] = board;
+    saveAtBackend();
     updateHTML();
 }
 
@@ -128,8 +130,9 @@ function drop(board) {
  */
 function deleteTicket(id) {
     data.splice(id, 1);
-    updateHTML();
     saveAtBackend();
+    updateHTML();
+
 }
 
 /**
