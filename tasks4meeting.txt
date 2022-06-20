@@ -1,2 +1,2 @@
-Kleine Karten(board):   Darstellung urgency?
+radius auf 5px
 
