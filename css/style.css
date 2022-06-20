@@ -108,7 +108,7 @@ main {
     height: 100vh;
 }
 
-@media(max-width:400px) {
+@media(max-width:480px) {
 
     main {
         flex-direction: column;

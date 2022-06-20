@@ -10,7 +10,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 
 //////////////////responsive category head////////////////////////////////
-/*function responsiveHead() {
+function responsiveHead() {
 
     if (window.innerWidth < 870) {
         document.getElementById('categoryDetails').classList.add('d-none');
@@ -19,7 +19,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
         document.getElementById('categoryDetails').classList.remove('d-none');
         document.getElementById('secondGap').classList.add('d-flex');
     }
-}*/
+}
 
 
 //////////////////render the data from json to display as rows////////////////////
