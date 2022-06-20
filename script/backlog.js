@@ -47,8 +47,8 @@ function renderBacklog() {
             <div id="assignedToInfo">${assignedTo}</div>
         </div>
         <div id="secondGap${i}" class="d-flex secondGap">
-            <div id="categoryInfo${i}"><b>${category}</b></div>
-            <div id="detailsInfo${i}">${details}</div>
+            <div id="categoryInfo${i}" class="categoryInfo"><b>${category}</b></div>
+            <div id="detailsInfo${i}" class="detailsInfo">${details}</div>
         </div>
     </div>
         <div id="addToBoard${i}" style="display:none; border-color: ${color}">

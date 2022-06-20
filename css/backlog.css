@@ -52,13 +52,13 @@
     display: flex;
 }
 
-#categoryInfo {
+.categoryInfo {
     text-align: start;
     width: 200px;
     overflow: hidden;
 }
 
-#detailsInfo {
+.detailsInfo {
     text-align: start;
     width: 60%;
     overflow: hidden;
