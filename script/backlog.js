@@ -10,7 +10,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 
 //////////////////responsive category head////////////////////////////////
-/*function responsiveHead() {
+function responsiveHead() {
 
     if (window.innerWidth < 870) {
         document.getElementById('categoryDetails').classList.add('d-none');
@@ -19,7 +19,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
         document.getElementById('categoryDetails').classList.remove('d-none');
         document.getElementById('secondGap').classList.add('d-flex');
     }
-}*/
+}
 
 
 //////////////////render the data from json to display as rows////////////////////
@@ -28,17 +28,17 @@ function renderBacklog() {
     let container = document.getElementById('backlogBox');
     container.innerHTML = '';
 
-for (let i = 0; i < data.length; i++) {
-    const task = data[i];
-   
-    if(data[i]['board'] == 'backlog'){
-        let assignedTo = task['assignedTo'];
-        let category = task['category'];
-        let details = task['description'];
-        let priority = task['urgency'];
-        let color = colors[priority.toLowerCase()];
+    for (let i = 0; i < data.length; i++) {
+        const task = data[i];
 
-        container.innerHTML += `
+        if (data[i]['board'] == 'backlog') {
+            let assignedTo = task['assignedTo'];
+            let category = task['category'];
+            let details = task['description'];
+            let priority = task['urgency'];
+            let color = colors[priority.toLowerCase()];
+
+            container.innerHTML += `
     
     <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
         <div class="d-flex align-items-center firstGap">
@@ -52,12 +52,12 @@ for (let i = 0; i < data.length; i++) {
         </div>
     </div>
         <div id="addToBoard${i}" style="display:none; border-color: ${color}">
-            <div class="section" onclick="sendTaskToBoard(${i})">Send to Board</div>
+            <div class="btn btn-primary" onclick="sendTaskToBoard(${i})">Send to Board</div>
     <div>
     `;
 
+        }
     }
-}
 
 
 
