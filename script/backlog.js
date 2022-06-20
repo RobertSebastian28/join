@@ -58,38 +58,6 @@ function renderBacklog() {
 
         }
     }
-
-
-
-
-    /*for (let i = 0; i < backlogData.length; i++) {
-        const task = backlogData[i];
-
-        let assignedTo = task['assignedTo'];
-        let category = task['category'];
-        let details = task['description'];
-        let priority = task['urgency'];
-        let color = colors[priority.toLowerCase()];
-
-        container.innerHTML = '';
-        container.innerHTML += `
-    
-    <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
-        <div class="d-flex align-items-center firstGap">
-            
-        <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
-            <div id="assignedToInfo">${assignedTo}</div>
-        </div>
-        <div id="secondGap${i}" class="d-flex secondGap">
-            <div id="categoryInfo${i}"><b>${category}</b></div>
-            <div id="detailsInfo${i}">${details}</div>
-        </div>
-    </div>
-        <div id="addToBoard${i}" style="display:none; border-color: ${color}">
-            <div class="section" onclick="sendTaskToBoard(${i})">Send to Board</div>
-    <div>
-    `
-    }*/
 }
 
 
