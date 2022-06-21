@@ -45,9 +45,9 @@ function renderBacklog() {
 
             container.innerHTML += `
     
-    <div onclick="show(${i})" id="show-hide${i}" style="border-color: ${color}">
+    <div onclick="show(${i})" id="show-hide${i}">
         
-        <div id="backlogRow${i}" class="rowStyle">
+        <div id="backlogRow${i}" class="rowStyle" style="border-color: ${color}">
             <div id="firstGap${i}" class="d-flex firstGapRow">
                 <div class="d-flex align-items-center">
                     <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
@@ -109,7 +109,7 @@ function hide(i) {
         document.getElementById('backlogRow' + i).style.marginBottom = '8px';
         document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
         document.getElementById('backlogRow' + i).style.borderRadius = '5px';
-        document.getElementById('backlogRow' + i).style.maxHeight = '150px';
+        document.getElementById('backlogRow' + i).style.height = '150px';
     }
 
 
