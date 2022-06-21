@@ -112,6 +112,7 @@
     }
     .firstGapRow {
         flex-direction: column;
+        width: unset;
     }
     .detailsInfo {
         line-height: unset;
