@@ -31,7 +31,7 @@
 form {
     display: flex;
     position: relative;
-    justify-content:start;
+    justify-content: start;
     align-items: center;
     margin-top: 50px;
     margin-left: 9vw;
@@ -55,7 +55,7 @@ textarea {
     border-radius: 5px;
 }
 
-select {
+.add-task-select {
     height: 60px;
     min-width: 420px;
     font-size: 25px;
@@ -75,6 +75,16 @@ input {
     font-size: 18px;
 }
 
+#icon-plus {
+    max-width: 70px;
+    max-height: 70px;
+}
+
+#icon-plus:hover {
+    cursor: pointer;
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
 .add-task-assigned-to {
     min-width: 420px;
     height: 250px;
@@ -89,11 +99,22 @@ input {
 }
 
 .add-task-margin-top {
+    display: flex;
+    align-items: center;
     margin-top: 20px;
 }
 
-.add-task-margin-top- {
-    margin-top: -40px;
+#add-task-change-profile {
+    border-radius: 5px;
+    margin-left: 20px;
+    padding-top: 12px;
+    width: 170px;
+}
+
+.profiles {
+    width: 240px;
+    height: 50px;
+    font-size: 20px;
 }
 
 .add-task-description-input {
@@ -105,10 +126,7 @@ input {
     height: 120px;
     width: 120px;
     object-fit: cover;
-}
-
-#icon-plus {
-    padding-left: 30px;
+    margin-right: 20px;
 }
 
 .add-task-buttons {
@@ -172,7 +190,7 @@ input {
     }
 
     textarea {
-        min-width: 80px;
+        min-width: 415px;
         height: 60px;
     }
 
@@ -181,7 +199,7 @@ input {
         height: 60px;
     }
 
-    select {
+    .add-task-select {
         min-width: 415px;
         height: 60px;
     }
@@ -210,7 +228,7 @@ input {
     }
 
     textarea {
-        width: 300px;
+        min-width: 300px;
     }
 
     input {
@@ -225,9 +243,17 @@ input {
         min-width: 300px;
     }
 
-    select {
+
+    .add-task-select {
         min-width: 300px;
     }
 
-}
+    .profiles {
+        width: 180px;
+    }
 
+    #add-task-change-profile {
+        margin-left: -20px;
+    }
+
+}

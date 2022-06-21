@@ -46,3 +46,33 @@ p {
     text-align: start;
     padding-bottom: 5px;
 }
+
+@media(max-width:950px) {
+    .help-container {
+        width: 650px;
+    }
+}
+
+@media(max-width:800px) {
+    .help-container {
+        width: 450px;
+    }
+}
+
+@media(max-width:600px) {
+    .help-container {
+        width: 330px;
+    }
+}
+
+@media(max-width:365px) {
+    .help-container {
+        width: 300px;
+    }
+}
+
+@media(max-width:300px) {
+    .help-container {
+        width: 260px;
+    }
+}

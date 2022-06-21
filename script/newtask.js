@@ -6,6 +6,8 @@ function addToAllTasks() {
     let urgencyA = document.getElementById("add-task-urgency");
     let urgency = urgencyA.options[urgencyA.selectedIndex].text;
     let description = document.getElementById('add-task-description');
+    let profileA = document.getElementById('add-task-profile');
+    let profile = profileA.options[profileA.selectedIndex].text;
 
     let tasks = {
        "title": title.value,
@@ -13,7 +15,8 @@ function addToAllTasks() {
        "board": "backlog",
        "category": category,
        "urgency": urgency,
-       "description": description.value
+       "description": description.value,
+       "assignedTo": profile
     };
 
     data.push(tasks);
@@ -26,4 +29,8 @@ function deleteInputValue() {
     document.getElementById("add-task-category").selectedIndex = 0;
     document.getElementById("add-task-urgency").selectedIndex = 0;
     document.getElementById('add-task-description').value = '';
+}
+
+function changeProfile() {
+    
 }

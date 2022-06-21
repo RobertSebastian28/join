@@ -40,7 +40,7 @@
                     </div>
                     <div class="add-task-margin-bottom">
                         <h3>Category</h3>
-                        <select id="add-task-category">
+                        <select class="add-task-select" id="add-task-category">
                             <option>Marketing</option>
                             <option>Development</option>
                             <option>Design</option>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="add-task-margin-bottom">
                         <h3>Urgency</h3>
-                        <select id="add-task-urgency">
+                        <select class="add-task-select"  id="add-task-urgency">
                             <option>High</option>
                             <option>Medium</option>
                             <option>Low</option>
@@ -63,7 +63,14 @@
                         <h3>Assigned To</h3>
                         <div class="add-task-margin-top">
                             <img class="profile-pic" id="profile-pic" src="./img/user_dummy.png">
-                            <img id="icon-plus" src="./img/icon plus.png">
+                            <div id="add-task-change-profile">
+                                <div><select id="add-task-profile" class="profiles">
+                                    <option>Everyone</option>
+                                    <option>Jorgo Koinaris</option>
+                                    <option>Andre Hehn</option>
+                                    <option>Robert Sebastian</option>
+                                </select></div>
+                            </div>
                         </div>
                         <div class="add-task-buttons">
                             <button type="button" onclick="deleteInputValue()" class="add-task-margin-right btn btn-outline-secondary">Cancel</button>
