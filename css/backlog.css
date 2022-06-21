@@ -106,7 +106,7 @@
 @media (max-width:870px) {
     .rowStyle {
         overflow: hidden;
-        max-height: 150px;
+        height: 150px;
         flex-direction: column;
         align-items: center;
     }
@@ -115,6 +115,7 @@
     }
     .detailsInfo {
         line-height: unset;
+        text-align: center;
     }
     .secondGapRow {
         width: unset;
