@@ -13,29 +13,50 @@
     margin-right: 25px;
 }
 
+.m-height {
+    max-height: 60px;
+}
+
 .firstGap {
-    width: 30%;
-    text-align: start;
+    width: 50%;
+    text-align: center;
+    justify-content: space-between;
     color: rgb(28, 45, 146);
+    padding-left: 15px;
 }
 
 .secondGap {
-    width: 100%;
-    text-align: start;
+    width: 50%;
+    text-align: end;
     color: rgb(28, 45, 146);
+}
+
+.firstGapRow {
+    width: 50%;
+    text-align: center;
+    align-items: center;
     justify-content: space-between;
+    color: rgb(28, 45, 146);
+}
+
+.secondGapRow {
+    width: 50%;
+    color: rgb(28, 45, 146);
+    margin: auto;
+    padding-left: 10px;
 }
 
 .rowStyle {
+    display: flex;
     background-color: rgba(211, 211, 211, 0.2);
     border-left: 5px solid;
     border-radius: 5px;
     max-height: 60px;
-    line-height: 60px;
     margin-top: 8px;
     margin-bottom: 8px;
     padding-left: 10px;
     padding-right: 10px;
+    overflow: hidden;
 }
 
 .rowStyle:hover {
@@ -52,16 +73,10 @@
     display: flex;
 }
 
-.categoryInfo {
-    text-align: start;
-    width: 200px;
-    overflow: hidden;
-}
-
 .detailsInfo {
-    text-align: start;
-    width: 60%;
+    text-align: end;
     overflow: hidden;
+    line-height: 60px;
 }
 
 .addToBoardContainer {
@@ -89,28 +104,21 @@
 }
 
 @media (max-width:870px) {
-    .firstGap {
-        width: unset;
-        margin: 5px;
-    }
-    #categoryInfo {
-        text-align: center;
-        margin: 10px;
-    }
-    #detailsInfo {
-        text-align: center;
-        margin: 5px;
-        width: unset;
-    }
-    .secondGap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .rowStyle {
-        line-height: unset;
-        max-height: unset;
+        overflow: hidden;
+        max-height: 150px;
         flex-direction: column;
         align-items: center;
+    }
+    .firstGapRow {
+        flex-direction: column;
+    }
+    .detailsInfo {
+        line-height: unset;
+    }
+    .secondGapRow {
+        width: unset;
+        text-align: center;
+        padding-left: unset;
     }
 }

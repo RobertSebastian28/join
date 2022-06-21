@@ -17,7 +17,7 @@
     <title>Backlog</title>
 </head>
 
-<body onload="init('backlog')" onresize="responsiveHead()">
+<body onload="init('backlog'), renderBacklog()" onresize="responsiveHead()">
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
@@ -33,11 +33,15 @@
             <div role="table" class="tableStyle">
                 <!--table header for categories-->
                 <div class="d-flex mb-3">
-                    <div class="firstGap"><b>ASSIGNED TO</b></div>
-                    <div id="categoryDetails" class="d-flex secondGap">
-                        <div><b>CATEGORY</b></div>
-                        <div><b>DETAILS</b></div>
+                    <div id="categoryDetails" class="d-flex firstGap">
+                        <div><b>ASSIGNED TO</b></div>
+                        <div id="title"><b>TITLE</b></div>
+                        <div id="category"><b>CATEGORY</b></div>
                     </div>
+                    <div class="secondGap"><b>DETAILS</b></div>
+
+
+
                 </div>
                 <!--render data to backlog---------------------------->
                 <div id="backlogBox">

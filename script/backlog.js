@@ -9,15 +9,19 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 
 
-//////////////////responsive category head////////////////////////////////
+// ////////////////responsive category head////////////////////////////////
 function responsiveHead() {
 
     if (window.innerWidth < 870) {
-        document.getElementById('categoryDetails').classList.add('d-none');
-        document.getElementById('secondGap').classList.remove('d-flex');
+        document.getElementById('category').classList.add('d-none');
+        document.getElementById('title').classList.add('d-none');
+        document.getElementById('titleInfo').classList.add('mb-2', 'mt-2');
+        document.getElementById('categoryInfo').classList.add('mb-2');
     } else {
-        document.getElementById('categoryDetails').classList.remove('d-none');
-        document.getElementById('secondGap').classList.add('d-flex');
+        document.getElementById('category').classList.remove('d-none');
+        document.getElementById('title').classList.remove('d-none');
+        document.getElementById('titleInfo').classList.remove('mb-2', 'mt-2');
+        document.getElementById('categoryInfo').classList.remove('mb-2');
     }
 }
 
@@ -32,6 +36,7 @@ function renderBacklog() {
         const task = data[i];
 
         if (data[i]['board'] == 'backlog') {
+            let title = task['title'];
             let assignedTo = task['assignedTo'];
             let category = task['category'];
             let details = task['description'];
@@ -40,22 +45,28 @@ function renderBacklog() {
 
             container.innerHTML += `
     
-    <div id="backlogRow${i}" onclick="show(${i})" class="d-flex justify-content-start rowStyle" style="border-color: ${color}">
-        <div class="d-flex align-items-center firstGap">
-            
-        <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
-            <div id="assignedToInfo">${assignedTo}</div>
+    <div onclick="show(${i})" id="show-hide${i}" style="border-color: ${color}">
+        
+        <div id="backlogRow${i}" class="rowStyle">
+            <div id="firstGap${i}" class="d-flex firstGapRow">
+                <div class="d-flex align-items-center">
+                    <img src="img/user_dummy.png" class="profilePicture" id="profilePicture${i}" alt="">
+                    <div id="assignedToInfo">${assignedTo}</div>
+                </div>
+                <div id="titleInfo${i}"><b>${title}</b></div>
+                <div id="categoryInfo${i}"><b>${category}</b></div>
+            </div>
+        
+            <div id="secondGap" class="secondGapRow">
+                <div id="detailsInfo${i}" class="detailsInfo">${details}</div>
+            </div>
         </div>
-        <div id="secondGap${i}" class="d-flex secondGap">
-            <div id="categoryInfo${i}" class="categoryInfo"><b>${category}</b></div>
-            <div id="detailsInfo${i}" class="detailsInfo">${details}</div>
-        </div>
-    </div>
-        <div id="addToBoard${i}" style="display:none; border-color: ${color}">
+        
+        <div id="addToBoard${i}" class="text-end" style="display:none; border-color: ${color}">
             <div class="btn btn-primary" onclick="sendTaskToBoard(${i})">Send to Board</div>
-    <div>
+        <div>
+    </div>
     `;
-
         }
     }
 }
@@ -66,41 +77,47 @@ function show(i) {
     let hiddenContainer = document.getElementById('addToBoard' + i);
 
     document.getElementById('detailsInfo' + i).style.overflow = 'unset';
-    document.getElementById('backlogRow' + i).style.lineHeight = 'unset';
+    document.getElementById('detailsInfo' + i).style.lineHeight = 'unset';
     document.getElementById('backlogRow' + i).style.maxHeight = 'unset';
-    document.getElementById('secondGap' + i).style.alignItems = 'center';
     document.getElementById('backlogRow' + i).style.marginBottom = 'unset';
     document.getElementById('backlogRow' + i).style.paddingBottom = '8px';
     document.getElementById('backlogRow' + i).style.borderRadius = '5px 5px 0px 0px';
+    if (window.innerWidth > 870) {
+        document.getElementById('firstGap' + i).style.lineHeight = '60px';
+        document.getElementById('firstGap' + i).style.alignItems = 'start';
+    }
 
     hiddenContainer.style.display = 'flex';
     hiddenContainer.classList.add('addToBoardContainer');
-    document.getElementById('backlogRow' + i).setAttribute('onclick', `hide(${i})`);
+    document.getElementById('show-hide' + i).setAttribute('onclick', `hide(${i})`);
 }
 
 function hide(i) {
     let hiddenContainer = document.getElementById('addToBoard' + i);
 
     if (window.innerWidth > 870) {
-        hiddenContainer.classList.remove('addToBoardContainer');
-        hiddenContainer.style.display = 'none';
-        document.getElementById('backlogRow' + i).style.lineHeight = '60px';
+        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
+        document.getElementById('detailsInfo' + i).style.lineHeight = '60px';
         document.getElementById('backlogRow' + i).style.maxHeight = '60px';
         document.getElementById('backlogRow' + i).style.marginBottom = '8px';
         document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
-        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
         document.getElementById('backlogRow' + i).style.borderRadius = '5px';
-        document.getElementById('backlogRow' + i).setAttribute('onclick', `show(${i})`);
+        document.getElementById('firstGap' + i).style.lineHeight = 'unset';
+        document.getElementById('firstGap' + i).style.alignItems = 'center';
     } else {
-        hiddenContainer.classList.remove('addToBoardContainer');
-        hiddenContainer.style.display = 'none';
+        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
         document.getElementById('backlogRow' + i).style.marginBottom = '8px';
         document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
-        document.getElementById('detailsInfo' + i).style.overflow = 'hidden';
         document.getElementById('backlogRow' + i).style.borderRadius = '5px';
-        document.getElementById('backlogRow' + i).setAttribute('onclick', `show(${i})`);
+        document.getElementById('backlogRow' + i).style.maxHeight = '150px';
     }
+
+
+    hiddenContainer.style.display = 'none';
+    hiddenContainer.classList.remove('addToBoardContainer');
+    document.getElementById('show-hide' + i).setAttribute('onclick', `show(${i})`);
 }
+
 
 /////////////send the selected task to the board-site/////////////////////
 function sendTaskToBoard(i) {
