@@ -109,7 +109,7 @@ function hide(i) {
         document.getElementById('backlogRow' + i).style.marginBottom = '8px';
         document.getElementById('backlogRow' + i).style.paddingBottom = 'unset';
         document.getElementById('backlogRow' + i).style.borderRadius = '5px';
-        document.getElementById('backlogRow' + i).style.height = '150px';
+        document.getElementById('backlogRow' + i).style.maxHeight = '150px';
     }
 
 

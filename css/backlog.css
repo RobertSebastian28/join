@@ -106,7 +106,7 @@
 @media (max-width:870px) {
     .rowStyle {
         overflow: hidden;
-        height: 150px;
+        max-height: 150px;
         flex-direction: column;
         align-items: center;
     }
