@@ -27,6 +27,7 @@
 }
 
 .sub-card {
+    cursor: pointer;
     border-radius: 5px;
     margin-bottom: 8px;
     width: 256px;
