@@ -21,6 +21,8 @@ function addToAllTasks() {
 
     data.push(tasks);
     saveAtBackend(); 
+    deleteInputValue();
+    postedAddTask();
 }
 
 function deleteInputValue() { 
@@ -31,6 +33,12 @@ function deleteInputValue() {
     document.getElementById('add-task-description').value = '';
 }
 
-function changeProfile() {
-    
+function postedAddTask() {
+    document.getElementById('add-task-content').classList.add('none');
+    document.getElementById('add-task-posted').classList.remove('none');
+}
+
+function openNewTaskWindow() {
+    document.getElementById('add-task-content').classList.remove('none');
+    document.getElementById('add-task-posted').classList.add('none');
 }
