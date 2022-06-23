@@ -90,8 +90,8 @@
     cursor: pointer;
 }
 
-.btn-padding {
-    padding: 3px;
+.btn-margin {
+    margin: 5px;
 }
 
 .section {
