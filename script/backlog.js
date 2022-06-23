@@ -63,7 +63,7 @@ function renderBacklog() {
         </div>
         
         <div id="addToBoard${i}" class="text-end" style="display:none; border-color: ${color}">
-            <div class="btn btn-primary" onclick="sendTaskToBoard(${i})">Send to Board</div>
+            <div class="btn btn-primary btn-padding" onclick="sendTaskToBoard(${i})">Send to Board</div>
         <div>
     </div>
     `;

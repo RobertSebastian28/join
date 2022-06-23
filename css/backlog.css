@@ -90,6 +90,10 @@
     cursor: pointer;
 }
 
+.btn-padding {
+    padding: 3px;
+}
+
 .section {
     text-align: center;
     border: 2px solid gray;
