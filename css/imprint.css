@@ -1,5 +1,4 @@
 .impressumStyle {
-    background-color: rgb(224, 223, 223);
     text-align: center;
     margin-right: 50px;
     margin-left: 50px;
@@ -7,4 +6,17 @@
     margin-bottom: 50px;
     padding: 30px;
     box-shadow: 0px 0px 14px 2px rgb(0 0 0 / 75%);
+}
+
+@media (max-width:425px) {
+    .impressumStyle {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:220px) {
+    .impressumStyle {
+        padding: 0;
+    }
 }
