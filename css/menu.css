@@ -104,7 +104,7 @@ nav input[type="checkbox"] {
 
 
 
-@media(max-width:480px) {
+@media(max-width:560px) {
 
     .menu-column {
         display: none;

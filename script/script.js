@@ -1,48 +1,6 @@
 //testing Data:
 
 let data = [
-    {
-        "title": "test1",
-        "description": "blablabla1",
-        "board": "backlog",
-        "dueDate": 31354216446,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    }, {
-        "title": "test2",
-        "description": "blablabla2",
-        "board": "todo",
-        "dueDate": 16462514654,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    }, {
-        "title": "test3",
-        "description": "blablabla1",
-        "board": "progress",
-        "dueDate": 316468224685,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    }, {
-        "title": "test4",
-        "description": "blablabla1",
-        "board": "testing",
-        "dueDate": 615646228469,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    }, {
-        "title": "test5",
-        "description": "blablabla1",
-        "board": "done",
-        "dueDate": 651462224151,
-        "category": "Marketing",
-        "urgency": "high",
-        "assignedTo": "no one"
-    },
-
 ];
 
 setURL('../smallest_backend_ever');
