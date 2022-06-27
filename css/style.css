@@ -97,6 +97,9 @@ main {
     height: 100vh;
     width: 100%;
     max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .left-container {
@@ -106,6 +109,10 @@ main {
     background-color: rgb(28, 45, 146);
     width: 128px;
     height: 100vh;
+}
+
+footer {
+    text-align: center;
 }
 
 @media(max-width:560px) {

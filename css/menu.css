@@ -100,10 +100,6 @@ nav input[type="checkbox"] {
 }
 
 
-
-
-
-
 @media(max-width:560px) {
 
     .menu-column {
@@ -187,6 +183,4 @@ nav input[type="checkbox"] {
     .user-logo {
         display: none;
     }
-
-
 }

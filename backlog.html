@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <script src="./script/mini_backend.js"></script>
     <script src="./script/script.js"></script>
     <script src="./script/backlog.js"></script>
@@ -21,58 +24,38 @@
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
+            <div>
+                <header class="header">
+                    <h1>Backlog</h1>
+                    <p class="text-primary mb-4">Learning Management System Project</p>
+                    <p><b>Click on the task to get more information</b></p>
+                </header>
 
-            <header class="header">
-                <h1>Backlog</h1>
-                <p class="text-primary mb-4">Learning Management System Project</p>
-                <p><b>Click on the task to get more information</b></p>
-            </header>
+
+
+                <div role="table" class="tableStyle">
+                    <!--table header for categories-->
+                    <div class="d-flex mb-3">
+                        <div id="categoryDetails" class="d-flex firstGap">
+                            <div><b>ASSIGNED TO</b></div>
+                            <div id="title"><b>TITLE</b></div>
+                            <div id="category"><b>CATEGORY</b></div>
+                        </div>
+                        <div class="secondGap"><b>DETAILS</b></div>
 
 
 
-            <div role="table" class="tableStyle">
-                <!--table header for categories-->
-                <div class="d-flex mb-3">
-                    <div id="categoryDetails" class="d-flex firstGap">
-                        <div><b>ASSIGNED TO</b></div>
-                        <div id="title"><b>TITLE</b></div>
-                        <div id="category"><b>CATEGORY</b></div>
                     </div>
-                    <div class="secondGap"><b>DETAILS</b></div>
+                    <!--render data to backlog---------------------------->
+                    <div id="backlogBox">
 
 
 
-                </div>
-                <!--render data to backlog---------------------------->
-                <div id="backlogBox">
-
-
-
+                    </div>
                 </div>
             </div>
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <footer><span class="footer-text">Logos stammen u. A.von <a
+                        href="https://icons8.com">https://icons8.com</a></span></footer>
         </div>
     </main>
 </body>
