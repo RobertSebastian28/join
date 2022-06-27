@@ -14,7 +14,7 @@ async function loadFromBackend() {
 }
 
 /**
- * saves to backend.   // has to be checked if it works (note sure if right)
+ * saves to backend.   
  */
 async function saveAtBackend() {
     let dataAsJSON = JSON.stringify(data);
@@ -81,9 +81,10 @@ function forLoopForChangeColorOfNavItem(elementList) {
     }
 }
 
-
+/**
+ * Either shows user, that his login is wrong or, if the box is checked, forwards to board.
+ */
 function logInCheck(){
-
 if(document.getElementById('exampleInputEmail1').value || document.getElementById('exampleInputPassword1').value){
 document.getElementById('passwordInfo').classList.remove('d-none');
 }

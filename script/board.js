@@ -1,7 +1,5 @@
-
 let boards = ['todo', 'progress', 'testing', 'done'];
 let currentDrag;
-
 
 /**
  * Reads the JSON-array: data and renders the elements in the according div.
@@ -28,6 +26,7 @@ function forLoopForUpdateHtml(column, board) {
         document.getElementById(board).innerHTML += generateHtml(element, board);
     }
 }
+
 /**
  * Returns a draggable "ticket" (div) with the content of the JSON-array.
  * 
