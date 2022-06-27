@@ -4,6 +4,7 @@
     font-weight: 500;
     line-height: 1.2;
     margin-left: 25px;
+    margin-top: 15px;
 }
 
 .right-container {
@@ -194,11 +195,9 @@ input {
     .add-task-content {
         width: 490px;
     }
-
     .add-task-assigned-to {
         padding-top: 65px;
     }
-
     .add-task-buttons {
         margin-top: 35px;
         padding-bottom: 30px;
@@ -217,35 +216,28 @@ input {
         margin-top: 10px;
         margin-left: 20px;
     }
-
     .add-task-content {
         width: 415px;
     }
-
     textarea {
         min-width: 415px;
         height: 60px;
     }
-
     #add-task-dueDate {
         min-width: 415px;
         height: 60px;
     }
-
     .add-task-select {
         min-width: 415px;
         height: 60px;
     }
-
     input {
         min-width: 415px;
         height: 60px;
     }
-
     .add-task-assigned-to {
         min-width: 400px;
     }
-
     .add-task-margin-bottom {
         margin-bottom: 20px;
     }
@@ -255,38 +247,28 @@ input {
     form {
         padding: 0;
     }
-
     .add-task-content {
         width: 310px;
     }
-
     textarea {
         min-width: 300px;
     }
-
     input {
         min-width: 300px;
     }
-
     #add-task-dueDate {
         min-width: 300px;
     }
-
     .add-task-assigned-to {
         min-width: 300px;
     }
-
-
     .add-task-select {
         min-width: 300px;
     }
-
     .profiles {
         width: 180px;
     }
-
     #add-task-change-profile {
         margin-left: -20px;
     }
-
 }
