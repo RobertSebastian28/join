@@ -130,7 +130,7 @@ function sendTaskToBoard(i) {
 
 /////////////delete Task from JSON/////////////////////////////////////////
 function deleteTask(i) {
-    data[i].splice(i, 1);
+    data.splice(i, 1);
     saveAtBackend();
     renderBacklog();
 }
