@@ -63,6 +63,7 @@ function renderBacklog() {
         </div>
         
         <div id="addToBoard${i}" class="text-end" style="display:none; border-color: ${color}">
+            <div class="btn btn-danger btn-margin" onclick="deleteTask(${i})">Delete Task</div>
             <div class="btn btn-primary btn-margin" onclick="sendTaskToBoard(${i})">Send to Board</div>
         <div>
     </div>
@@ -122,6 +123,14 @@ function hide(i) {
 /////////////send the selected task to the board-site/////////////////////
 function sendTaskToBoard(i) {
     data[i]["board"] = "todo";
+    saveAtBackend();
+    renderBacklog();
+}
+
+
+/////////////delete Task from JSON/////////////////////////////////////////
+function deleteTask(i) {
+    data[i].splice(i, 1);
     saveAtBackend();
     renderBacklog();
 }
