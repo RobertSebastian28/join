@@ -203,6 +203,12 @@ input {
         padding-bottom: 30px;
         justify-content: center;
     }
+
+    .footer-text {
+        display: flex;
+        margin-top: 95px;
+        padding-left: 5px;
+    }
 }
 
 @media(max-width:670px) {
@@ -243,7 +249,31 @@ input {
     }
 }
 
-@media(max-width:593px) {
+@media(max-width:595px) {
+    .add-task-content {
+        width: 370px;
+    }
+    textarea {
+        min-width: 370px;
+    }
+    input {
+        min-width: 370px;
+    }
+    #add-task-dueDate {
+        min-width: 370px;
+    }
+    .add-task-assigned-to {
+        min-width: 370px;
+    }
+    .add-task-select {
+        min-width: 370px;
+    }
+    .profiles {
+        width: 180px;
+    }
+}
+
+@media(max-width:450px) {
     form {
         padding: 0;
     }
@@ -270,5 +300,41 @@ input {
     }
     #add-task-change-profile {
         margin-left: -20px;
+    }
+}
+
+@media(max-width:360px) {
+    form {
+        margin-left: 15px;
+    }
+
+    .add-task-content {
+        width: 250px;
+    }
+    textarea {
+        min-width: 250px;
+    }
+    input {
+        min-width: 250px;
+    }
+    #add-task-dueDate {
+        min-width: 250px;
+    }
+    .add-task-assigned-to {
+        min-width: 250px;
+    }
+    .add-task-select {
+        min-width: 250px;
+    }
+    .profiles {
+        width: 135px;
+    }
+    #add-task-change-profile {
+        margin-left: -20px;
+    }
+    .footer-text {
+        margin-top:85px;
+        margin-right: 10px;
+        padding: 0;
     }
 }
