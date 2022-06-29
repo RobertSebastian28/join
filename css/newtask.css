@@ -188,6 +188,7 @@ input {
         resize: none;
         border: 2px solid rgba(0, 0, 0, 0.1);
         border-radius: 5px;
+        margin-bottom: 30px;
     }
 
     #add-task-dueDate {
@@ -220,9 +221,17 @@ input {
     }
 
     .profiles {
-        width: 15vw;
+        width: 200px;
         height: 50px;
         font-size: 20px;
+    }
+
+    footer {
+        margin-top: 60px;
+    }
+
+    .add-task-buttons {
+        margin-top: 15px;
     }
 }
 
@@ -239,46 +248,75 @@ input {
     }
 }
 
+@media(max-width:560px) {
+    .add-task-posted-container {
+        left: 20%;
+    }
+}
+
 @media(max-width:440px) {
     .add-task-content {
-        min-width: 90%;
+        min-width: 70%;
+        padding-bottom: 60px;
     }
 
     .add-task-content {
-        width: 350px;
+       min-width: 120px !important;
     }
 
     textarea {
-        min-width: 250px;
+        min-width: 120px !important;
     }
 
     input {
-        min-width: 250px;
+        min-width: 120px !important;
     }
 
     #add-task-dueDate {
-        min-width: 250px;
+        min-width: 120px !important;
     }
 
     .add-task-assigned-to {
-        min-width: 250px;
+        margin-top: 20px;
+        min-width: 120px !important;
+        display: flex;
+        flex-direction: column;
+        align-items:center ;
+        justify-content: center;
+    }
+
+    .add-task-margin-top {
+        width: 120px;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .add-task-select {
-        min-width: 250px;
+        min-width: 250px !important;
     }
 
     .profiles {
-        width: 135px;
+        width: 145px;
     }
 
-    #add-task-change-profile {
-        margin-left: -20px;
-    }
-
-    .footer-text {
-        margin-top: 200px;
-        margin-right: 10px;
+    footer {
         padding: 0;
+    }
+
+    .add-task-buttons {
+        width: 99%;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 110px;
+    }
+
+    .form-control {
+        width: 250px;
+    }
+
+    .add-task-posted-container {
+        left: 10%;
     }
 }
