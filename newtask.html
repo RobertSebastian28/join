@@ -25,72 +25,72 @@
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div id="right-container" class="right-container">
             <div>
-            <header class="header">
-                <h1>Add Task</h1>
-                <p class="text-primary">Learning Managment System Project</p>
-            </header>
-            <div id="add-task-posted" class="none add-task-posted-container">
-                <div class="add-task-posted">
-                    <h2>Task created</h2>
-                    <button onclick="openNewTaskWindow()" class="btn btn-primary btn-posted">New Task</button>
+                <header class="header">
+                    <h1>Add Task</h1>
+                    <p class="text-primary">Learning Managment System Project</p>
+                </header>
+                <div id="add-task-posted" class="none add-task-posted-container">
+                    <div class="add-task-posted">
+                        <h2>Task created</h2>
+                        <button onclick="openNewTaskWindow()" class="btn btn-primary btn-posted">New Task</button>
+                    </div>
                 </div>
-            </div>
-
-            <form onsubmit="event.preventDefault(), addToAllTasks()">
-                <div id="add-task-content" class="add-task-content">
-                    <div class="add-task-margin-bottom">
-                        <h3>Title</h3>
-                        <input class="form-control" required minlength="3" id="add-task-title" cols="30"
-                            rows="10"></input>
-                    </div>
-                    <div class="add-task-margin-bottom">
-                        <h3>Due Date</h3>
-                        <input class="form-control" required id="add-task-dueDate" type="date">
-                    </div>
-                    <div class="add-task-margin-bottom">
-                        <h3>Category</h3>
-                        <select class="add-task-select" id="add-task-category">
-                            <option>Marketing</option>
-                            <option>Development</option>
-                            <option>Design</option>
-                        </select>
-                    </div>
-                    <div class="add-task-margin-bottom">
-                        <h3>Urgency</h3>
-                        <select class="add-task-select" id="add-task-urgency">
-                            <option>High</option>
-                            <option>Medium</option>
-                            <option>Low</option>
-                        </select>
-                    </div>
-                    <div>
-                        <h3>Description</h3>
-                        <textarea required minlength="3" id="add-task-description"
-                            class="add-task-description-input form-control" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="add-task-assigned-to add-task-margin-top-">
-                        <h3>Assigned To</h3>
-                        <div class="add-task-margin-top">
-                            <img class="profile-pic" id="profile-pic" src="./img/user_dummy.png">
-                            <div id="add-task-change-profile">
-                                <div><select id="add-task-profile" class="profiles">
-                                        <option>Everyone</option>
-                                        <option>Jorgo Koinaris</option>
-                                        <option>Andre Hehn</option>
-                                        <option>Robert Sebastian</option>
-                                    </select></div>
+                <form onsubmit="event.preventDefault(), addToAllTasks()">
+                    <div id="add-task-content" class="add-task-content">
+                        <div class="add-task-margin-bottom">
+                            <h3>Title</h3>
+                            <input class="form-control" required minlength="3" id="add-task-title" cols="30"
+                                rows="10"></input>
+                        </div>
+                        <div class="add-task-margin-bottom">
+                            <h3>Due Date</h3>
+                            <input class="form-control" required id="add-task-dueDate" type="date">
+                        </div>
+                        <div class="add-task-margin-bottom">
+                            <h3>Category</h3>
+                            <select class="add-task-select" id="add-task-category">
+                                <option>Marketing</option>
+                                <option>Development</option>
+                                <option>Design</option>
+                            </select>
+                        </div>
+                        <div class="add-task-margin-bottom">
+                            <h3>Urgency</h3>
+                            <select class="add-task-select" id="add-task-urgency">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h3>Description</h3>
+                            <textarea required minlength="3" id="add-task-description"
+                                class="add-task-description-input form-control" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="add-task-assigned-to add-task-margin-top-">
+                            <h3>Assigned To</h3>
+                            <div class="add-task-margin-top">
+                                <img class="profile-pic" id="profile-pic" src="./img/user_dummy.png">
+                                <div id="add-task-change-profile">
+                                    <div><select id="add-task-profile" class="profiles">
+                                            <option>Everyone</option>
+                                            <option>Jorgo Koinaris</option>
+                                            <option>Andre Hehn</option>
+                                            <option>Robert Sebastian</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                            <div class="add-task-buttons">
+                                <button type="button" onclick="deleteInputValue()"
+                                    class="add-task-margin-right btn btn-outline-secondary">Cancel</button>
+                                <button class="btn btn-primary">Create Task</button>
                             </div>
                         </div>
-                        <div class="add-task-buttons">
-                            <button type="button" onclick="deleteInputValue()"
-                                class="add-task-margin-right btn btn-outline-secondary">Cancel</button>
-                            <button class="btn btn-primary">Create Task</button>
-                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
             </div>
-            <footer><span class="footer-text">Logos stammen u. A.von <a href="https://icons8.com">https://icons8.com</a></span></footer>
+            <footer><span class="footer-text">Logos stammen u. A.von <a
+                        href="https://icons8.com">https://icons8.com</a></span></footer>
         </div>
     </main>
 </body>
