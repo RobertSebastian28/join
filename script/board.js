@@ -62,7 +62,7 @@ function htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard) {
     <div class="card sub-card" draggable="true" ondragstart="startDrag(${id})"><div class="card-body border${element['urgency'].toLowerCase()}">
             <div id ="chevron${id}" class="card-title chevron" onclick="showMoreTicket(${id})"> <h5> ${element['title']}</h5><img id="chevronImg${id}" src="././img/more.png"></div>
             <div id="moreInfo${id}" class="ticketInfo d-none">
-            <p class="card-text"><u><i>desription:</i></u>&ensp; ${element['description']}</p>
+            <p class="card-text"><u><i>description:</i></u>&ensp; ${element['description']}</p>
             <p class="card-text"><u><i>due to:</i></u>&ensp; ${date}</p>
             <p class="card-text"><u><i>assigned to:</i></u>&ensp; ${element['assignedTo']}</p><br></Div>
             <div class="ticket-buttons"  id="buttons${id}"><a href="#" class="btn btn-danger" onclick="deleteTicket(${id})">delete</a>${nextButton}
