@@ -134,8 +134,8 @@ input {
 
 .profile-pic {
     border-radius: 100%;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     object-fit: cover;
     margin-right: 20px;
 }
@@ -240,6 +240,11 @@ input {
         flex-direction: column;
         min-width: 30%;
     }
+    .profile-pic {
+        height: 80px;
+        width: 80px;
+        margin-left: 40px;
+    }
 }
 
 @media(max-width:620px) {
@@ -299,6 +304,12 @@ input {
         width: 145px;
     }
 
+    .profile-pic {
+        height: 70px;
+        width: 70px;
+        margin: 0;
+    }
+
     footer {
         padding: 0;
     }
@@ -318,5 +329,23 @@ input {
 
     .add-task-posted-container {
         left: 10%;
+    }
+}
+
+@media(max-width:380px) {
+    .add-task-posted {
+        width: 220px;
+        height: 230px;
+    }
+
+    .add-task-posted-container {
+        left: 20%;
+    }
+}
+
+@media(max-width:300px) {
+    .add-task-posted {
+        width: 180px;
+        height: 200px;
     }
 }
