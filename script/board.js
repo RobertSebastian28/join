@@ -65,7 +65,7 @@ function htmlForGenerateHTML(element, id, date, nextButton, board, nextBoard) {
             <p class="card-text"><u><i>desription:</i></u>&ensp; ${element['description']}</p>
             <p class="card-text"><u><i>due to:</i></u>&ensp; ${date}</p>
             <p class="card-text"><u><i>assigned to:</i></u>&ensp; ${element['assignedTo']}</p><br></Div>
-            <div class="ticket-buttons"  id="buttons${id}"><a href="#" class="btn btn-primary" onclick="deleteTicket(${id})">delete</a>${nextButton}
+            <div class="ticket-buttons"  id="buttons${id}"><a href="#" class="btn btn-danger" onclick="deleteTicket(${id})">delete</a>${nextButton}
             </div></div></div>`;
 }
 
