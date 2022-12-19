@@ -1,3 +1,14 @@
+.right-container {
+    max-width: 2000px;
+}
+
+.impressumContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .impressumStyle {
     text-align: center;
     margin-right: 50px;
@@ -5,7 +16,7 @@
     margin-top: 25px;
     margin-bottom: 50px;
     padding: 30px;
-    box-shadow: 0px 0px 14px 2px rgb(0 0 0 / 75%);
+    box-shadow: 0px 0px 14px 2px rgb(0 0 0 / 15%);
     border-radius: 5px;
 }
 

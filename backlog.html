@@ -17,7 +17,7 @@
     <title>Backlog</title>
 </head>
 
-<body onload="init('backlog')" onresize="responsiveHead()">
+<body onload="init('backlog'); addTaskInfo()" onresize="responsiveHead()">
     <main>
         <div w3-include-html="./templates/menu.html" class="left-container"></div>
         <div class="right-container">
@@ -44,11 +44,7 @@
 
                     </div>
                     <!--render data to backlog---------------------------->
-                    <div id="backlogBox">
-
-
-
-                    </div>
+                    <div id="backlogBox"></div>
                 </div>
             </div>
             <footer><span class="footer-text">Logos come from <a

@@ -9,7 +9,7 @@ const backlogData = data.filter(data => data.board == 'backlog');
 
 
 
-// ////////////////responsive category head////////////////////////////////
+///////////////////responsive category head////////////////////////////////
 function responsiveHead() {
 
     if (window.innerWidth < 870) {
@@ -133,4 +133,11 @@ function deleteTask(i) {
     data.splice(i, 1);
     saveAtBackend();
     renderBacklog();
+}
+
+function addTaskInfo() {
+    let container = document.getElementById('backlogBox');
+    if (container.innerHTML == '') {
+    container.innerHTML = '<div class="addTaskInfoBox">Please create a new task</div>';
+    }
 }

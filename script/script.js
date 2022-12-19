@@ -30,7 +30,7 @@ async function init(page) {
     await loadFromBackend();
     changeColorOfNavItem(page);
     if (page == 'board') { updateHTML(); }
-    if( page == 'backlog') { renderBacklog(); }
+    if( page == 'backlog') { renderBacklog(),addTaskInfo(); }
 }
 
 /**
@@ -91,3 +91,5 @@ else if(document.getElementById('exampleCheck1').checked){
     window.open('./board.html', "_self");
 }
 }
+
+
